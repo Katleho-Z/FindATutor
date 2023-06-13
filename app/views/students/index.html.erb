@@ -1,0 +1,9 @@
+<div class="cards">
+  <% @tutors.each do |tutor| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= tutor.profile_image %>">
+      <h2><%= tutor.first_name %> <%= tutor.last_name %></h2>
+      <p><%= tutor.bio %></p>
+    
+    </div>
+  <% end %>
+</div>

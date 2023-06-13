@@ -1,0 +1,20 @@
+.container-skill {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Increased spacing between buttons */
+}
+
+.btn {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: linear-gradient(#ffbf00, #ffb700);
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(#6d6a6a, #000000);
+  color: white;
+}
