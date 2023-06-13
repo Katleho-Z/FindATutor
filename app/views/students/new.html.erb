@@ -1,0 +1,12 @@
+<h1>Create Student Account</h1>
+
+<%= simple_form_for @student, url: student_profile_path do |form| %>
+  <%= form.input :first_name %>
+  <%= form.input :last_name %>
+  <%= form.input :profile_image %>
+  <%= form.input :phone_number %>
+  <%= form.input :bio %>
+
+
+  <%= form.button :submit, "Create Student Account" %>
+<% end %>

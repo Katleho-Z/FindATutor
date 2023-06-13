@@ -1,0 +1,13 @@
+<h2>Choose Your Role</h2>
+
+<%= form_tag choose_profile_path, method: :post %>
+  <div>
+    <%= button_to 'Student', student_profile_path, method: :get, class: 'role-button' %>
+  </div>
+
+  <div>
+    <%= button_to 'Tutor', tutor_profile_path, method: :get, class: 'role-button' %>
+  </div>
+
+  <%= submit_tag 'Sign Up', class: 'submit-button' %>
+<% end %>
