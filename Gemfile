@@ -79,3 +79,6 @@ end
 
 # Gemfile
 gem "devise"
+
+# Faker
+gem "faker"
