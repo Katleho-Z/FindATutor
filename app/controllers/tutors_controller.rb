@@ -34,7 +34,7 @@ class TutorsController < ApplicationController
 
   def destroy
     @tutor.destroy
-    redirect_to tutors_url, notice: 'Tutor was successfully destroyed.'
+    redirect_to tutors_url, notice: 'Tutor was successfully deleted.'
   end
 
   private

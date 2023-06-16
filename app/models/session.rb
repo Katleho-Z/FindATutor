@@ -6,4 +6,5 @@ class Session < ApplicationRecord
   validates :time, presence: true
   validates :amount_offered, presence: true
   validates :status, presence: true
+  validates :skill_id, presence: true
 end
