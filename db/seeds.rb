@@ -35,7 +35,7 @@ photography_skill = Skill.create!(
   name: "Photography"
 )
 
-painting_skill= Skill.create!(
+painting_skill = Skill.create!(
   name: "Painting"
 )
 
