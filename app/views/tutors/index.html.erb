@@ -1,38 +1,21 @@
-<div class="grid-container">
-  <div class="card">
-    <img src="tutor1.jpg" alt="Tutor 1">
-    <h3>Tutor 1</h3>
-    <p>Skills: HTML, CSS, JavaScript</p>
-    <p>Rating: 4.5/5</p>
-  </div>
-  <div class="card">
-    <img src="tutor2.jpg" alt="Tutor 2">
-    <h3>Tutor 2</h3>
-    <p>Skills: Python, Data Science</p>
-    <p>Rating: 4.8/5</p>
-  </div>
-  <div class="card">
-    <img src="tutor3.jpg" alt="Tutor 3">
-    <h3>Tutor 3</h3>
-    <p>Skills: Java, Algorithms</p>
-    <p>Rating: 4.2/5</p>
-  </div>
-  <div class="card">
-    <img src="tutor4.jpg" alt="Tutor 4">
-    <h3>Tutor 4</h3>
-    <p>Skills: C++, Object-Oriented Programming</p>
-    <p>Rating: 4.7/5</p>
-  </div>
-  <div class="card">
-    <img src="tutor5.jpg" alt="Tutor 5">
-    <h3>Tutor 5</h3>
-    <p>Skills: Mathematics, Calculus</p>
-    <p>Rating: 4.9/5</p>
-  </div>
-  <div class="card">
-    <img src="tutor6.jpg" alt="Tutor 6">
-    <h3>Tutor 6</h3>
-    <p>Skills: English, Writing</p>
-    <p>Rating: 4.6/5</p>
+<div class="container">
+  <div class="row">
+    <% @tutors.each do |tutor| %>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <% if tutor.profile_image.present? %>
+            <%= image_tag tutor.profile_image, class: "card-img-top", alt: tutor.first_name %>
+          <% else %>
+            <div class="placeholder-image"></div>
+          <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= "#{tutor.first_name} #{tutor.last_name} - #{tutor.location}" %></h5>
+            <p class="card-text"><%= tutor.availability %></p>
+            <p class="card-text"><%= tutor.reviews %></p>
+            <%= link_to "Show More", tutor_path(tutor), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

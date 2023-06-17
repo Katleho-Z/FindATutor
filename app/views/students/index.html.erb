@@ -27,30 +27,29 @@
     <a class="btn btn-gradient" href="#">Chess</a>
     <a class="btn btn-gradient" href="#">Painting</a>
     <a class="btn btn-gradient" href="#">Calculus</a> %>
-
-    <div class="container">
-  <h1>Find A Tutor</h1>
-  <div class="tutor-cards">
-    <% @tutors.each do |tutor| %>
-      <div class="tutor-card">
-        <div class="tutor-image">
-          <%= image_tag tutor.avatar_url, alt: tutor.name %>
-        </div>
-        <div class="tutor-details">
-          <h2><%= tutor.name %></h2>
-          <p><%= tutor.skills %></p>
-          <div class="rating">
-            <% tutor.rating.times do %>
-              <i class="fas fa-star"></i>
-            <% end %>
-          </div>
-          <p>Hourly Rate: <%= tutor.hourly_rate %></p>
-          <a href="#" class="btn">Book Now</a>
-        </div>
-      </div>
-    <% end %>
   </div>
 </div>
 
+<h2>Find Tutor by Location</h2>
+<div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://media.timeout.com/images/105237782/image.jpg)">
+    Johannesburg
+    <div class="centered">
+      <a href="#" class="show-more-button">Show More</a>
+    </div>
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.goworldtravel.com%2Fdurban-south-africa-golden-mile%2F&psig=AOvVaw387_ukRXVKEt2IQ9rgseZn&ust=1687092102730000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCNC54P2pyv8CFQAAAAAdAAAAABAE)">
+    Durban
+    <div class="centered">
+      <a href="#" class="show-more-button">Show More</a>
+    </div>
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.contentstack.io/v3/assets/blt00454ccee8f8fe6b/bltedce0a1c7693acbc/6139d401402ba23dfc223db6/US_CapeTown_SA_Header.jpg">
+    Capetown
+    <div class="centered">
+      <a href="#" class="show-more-button">Show More</a>
+    </div>
   </div>
 </div>

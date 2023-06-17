@@ -4,12 +4,12 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-resources :students, only: [:new, :create, :show, :edit, :update] do
+resources :students do
   resources :student_skills, only: [:new, :create, :edit, :update, :destroy]
   resources :student_reviews, only: [:new, :create, :edit, :update, :destroy]
 end
 
-resources :tutors, only: [:new, :create, :show, :edit, :update] do
+resources :tutors do
   resources :tutor_skills, only: [:new, :edit, :create, :edit, :update, :destroy,]
   resources :tutor_reviews, only: [:new, :edit, :create, :edit, :update, :destroy,]
 end
