@@ -6,5 +6,4 @@ class TutorProfile < ApplicationRecord
   validates :skills, presence: true
   validates :location, presence: true
   validates :email, presence: true
-
 end

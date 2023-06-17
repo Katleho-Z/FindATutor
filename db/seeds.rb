@@ -139,3 +139,17 @@ student_skill2 = StudentSkill.create!(
   skill: illustration_skill,
   level: rand(1..5)
 )
+
+tutor_profile1 = TutorProfile.create(
+  bio: 'My name is Mzi and I am a graphic designer',
+  location: 'Joburg',
+  skills: 'Photography',
+  student_reviews: 'He is very good at mentoring'
+)
+
+tutor_profile2 = TutorProfile.create(
+  bio: 'My name is Kat and I am a content creator',
+  location: 'Cape Town',
+  skills: 'Film',
+  student_reviews: 'He takes his time and very good'
+)
