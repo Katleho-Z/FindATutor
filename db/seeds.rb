@@ -53,7 +53,8 @@ tutor1 = Tutor.create!(
   first_name: "Eti",
   last_name: "Nkanga",
   profile_image: "john-doe.jpg",
-  availability: "Monday, Wednesday, Friday", location: "Cape Town",
+  availability: "Monday, Wednesday, Friday",
+  location: "Cape Town",
   email_address: "eti@example.com",
   bio: "Experienced tutor with a passion for Photography.",
   user: user1
@@ -63,13 +64,15 @@ tutor2 = Tutor.create!(
   first_name: "Mzi",
   last_name: "Mthethwa",
   profile_image: "john-doe.jpg",
-  availability: "Monday, Wednesday, Friday", location: "Cape Town",
+  availability: "Monday, Wednesday, Friday",
+  location: "Cape Town",
   email_address: "eti@example.com",
   bio: "Experienced tutor with a passion for teaching.",
   user: user2
 )
 
-# Create Student
+# Create Students
+puts "Creating students..."
 student1 = Student.create!(
   first_name: "Kat",
   last_name: "Zonke",
@@ -89,7 +92,8 @@ student2 = Student.create!(
   user: user4
 )
 
-# Create Session1
+# Creating Sessions
+puts "Creating sessions..."
 session1 = Session.create!(
   tutor: tutor1,
   student: student1,
@@ -97,7 +101,7 @@ session1 = Session.create!(
   time: Time.now,
   amount_offered: 50.0,
   status: "Pending"
-  )
+)
 
 session2 = Session.create!(
   tutor: tutor2,
@@ -108,6 +112,8 @@ session2 = Session.create!(
   status: "Confirmed"
 )
 
+# Creating tutor's skills
+puts "Creating tutor_skills..."
 tutor_skill1 = TutorSkill.create!(
   tutor: tutor1,
   skill: maths_skill,
@@ -120,12 +126,14 @@ tutor_skill2 = TutorSkill.create!(
   level: rand(1..5)
 )
 
+# Create student skills
+puts "Creating student_skills..."
 student_skill1 = StudentSkill.create!(
   student: student1,
   skill: photography_skill,
   level: rand(1..5)
 )
-# cre
+
 student_skill2 = StudentSkill.create!(
   student: student2,
   skill: illustration_skill,
