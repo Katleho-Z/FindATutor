@@ -17,4 +17,5 @@ resources :skills, only: [:index, :show,]
 
   # Defines the root path route ("/")
   # root "articles#index"
+  resources :tutors
 end

@@ -1,0 +1,22 @@
+<div class="main-container-tutor-show">
+  <img src="https://www.usatoday.com/gcdn/-mm-/e6f5ff966046f4bf939f56e06c17033cdbbc23fc/c=0-229-4500-2771/local/-/media/2017/07/10/USATODAY/USATODAY/636353007248947232-BTS-ELEM-MALE-TEACHERS-1.jpg" width="300px" height="300px" alt="tutor_picture">
+  <div class="tutor-show-info">
+    <h2>  <%= "#{@tutor.first_name} #{@tutor.last_name}" %> </h2>
+   <p>
+      <% @tutor.skills.each do | skill | %>
+        <%= skill.name %>
+      <% end %>
+    </p>
+    <p> <%= "Location: #{@tutor.location}" %> </p>
+    <p> <%= "Email Address: #{@tutor.email_address}" %> </p>
+    <div class="tutor-show-reviews">
+      <p> Reviews </p>
+      <p> 4.5 </p>
+    </div>
+    <p class="black-btn"> Messages </p>
+  </div>
+  <div class="tutor-show-bio">
+   <h3> Bio </h3>
+    <p> <%= @tutor.bio %> </p>
+  </div>
+</div>
