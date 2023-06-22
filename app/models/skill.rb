@@ -1,4 +1,5 @@
 class Skill < ApplicationRecord
+  # belongs_to :session
   has_many :tutor_skills
   has_many :student_skills
 

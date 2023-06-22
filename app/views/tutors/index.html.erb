@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <% @tutors.each do |tutor| %>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <% if tutor.profile_image.present? %>
+            <%= image_tag tutor.profile_image, class: "card-img-top", alt: tutor.first_name %>
+          <% else %>
+            <div class="placeholder-image"></div>
+          <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= "#{tutor.first_name} #{tutor.last_name} - #{tutor.location}" %></h5>
+            <p class="card-text"><%= tutor.availability %></p>
+            <p class="card-text"><%= tutor.reviews %></p>
+            <%= link_to "Show More", tutor_path(tutor), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

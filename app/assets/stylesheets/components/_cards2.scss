@@ -1,0 +1,38 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-category {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-size: cover;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  margin: 10px;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.show-more-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.show-more-button:hover {
+  background-color: #333;
+  color: #fff;
+}

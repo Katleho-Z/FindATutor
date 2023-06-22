@@ -7,11 +7,13 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Cleaning database..."
-User.destroy_all
+Session.destroy_all
+TutorSkill.destroy_all
+StudentSkill.destroy_all
 Tutor.destroy_all
 Student.destroy_all
 Skill.destroy_all
-Session.destroy_all
+User.destroy_all
 
 # Create Users
 puts "Creating users..."
@@ -52,7 +54,7 @@ puts "Creating tutors..."
 tutor1 = Tutor.create!(
   first_name: "Eti",
   last_name: "Nkanga",
-  profile_image: "john-doe.jpg",
+  profile_image: "app/assets/images/tutors/eti.jpg",
   availability: "Monday, Wednesday, Friday",
   location: "Cape Town",
   email_address: "eti@example.com",
@@ -63,11 +65,11 @@ tutor1 = Tutor.create!(
 tutor2 = Tutor.create!(
   first_name: "Mzi",
   last_name: "Mthethwa",
-  profile_image: "john-doe.jpg",
+  profile_image: "app/assets/images/tutors/mzi.jpg",
   availability: "Monday, Wednesday, Friday",
   location: "Cape Town",
-  email_address: "eti@example.com",
-  bio: "Experienced tutor with a passion for teaching.",
+  email_address: "mzi@example.com",
+  bio: "Experienced tutor with a passion on teaching.",
   user: user2
 )
 
@@ -76,7 +78,7 @@ puts "Creating students..."
 student1 = Student.create!(
   first_name: "Kat",
   last_name: "Zonke",
-  profile_image: "john-doe.jpg",
+  profile_image: "app/assets/images/tutors/kat.jpg",
   phone_number: 1234567890,
   bio: "A motivated student eager to learn.",
   user: user3
@@ -86,7 +88,7 @@ student1 = Student.create!(
 student2 = Student.create!(
   first_name: "Alex",
   last_name: "April",
-  profile_image: "john-doe.jpg",
+  profile_image: "app/assets/images/tutors/alex.jpg",
   phone_number: 1234567890,
   bio: "A motivated student eager to learn.",
   user: user4
@@ -100,7 +102,8 @@ session1 = Session.create!(
   date: Date.today,
   time: Time.now,
   amount_offered: 50.0,
-  status: "Pending"
+  status: "Pending",
+  skill_id: english_skill.id,
 )
 
 session2 = Session.create!(
@@ -109,7 +112,8 @@ session2 = Session.create!(
   date: Date.tomorrow,
   time: Time.now + 1.hour,
   amount_offered: 75.0,
-  status: "Confirmed"
+  status: "Confirmed",
+  skill_id: painting_skill.id
 )
 
 # Creating tutor's skills
@@ -138,18 +142,4 @@ student_skill2 = StudentSkill.create!(
   student: student2,
   skill: illustration_skill,
   level: rand(1..5)
-)
-
-tutor_profile1 = TutorProfile.create(
-  bio: 'My name is Mzi and I am a graphic designer',
-  location: 'Joburg',
-  skills: 'Photography',
-  student_reviews: 'He is very good at mentoring'
-)
-
-tutor_profile2 = TutorProfile.create(
-  bio: 'My name is Kat and I am a content creator',
-  location: 'Cape Town',
-  skills: 'Film',
-  student_reviews: 'He takes his time and very good'
 )
