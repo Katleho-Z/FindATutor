@@ -1,0 +1,24 @@
+.main-container-tutor-show {
+  display: flex;
+  justify-content: space-between;
+  margin: 100px;
+}
+
+.tutor-show-info {
+  width: 300px;
+  border: 1px solid black;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.tutor-show-bio {
+  width: 300px;
+  border: 1px solid black;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.tutor-show-reviews {
+  display: flex;
+  justify-content: space-between;
+}
