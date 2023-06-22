@@ -54,7 +54,7 @@ puts "Creating tutors..."
 tutor1 = Tutor.create!(
   first_name: "Eti",
   last_name: "Nkanga",
-  profile_image: "app/assets/images/tutors/eti.jpg",
+  profile_image: "tutors/eti.jpg",
   availability: "Monday, Wednesday, Friday",
   location: "Cape Town",
   email_address: "eti@example.com",
@@ -65,7 +65,7 @@ tutor1 = Tutor.create!(
 tutor2 = Tutor.create!(
   first_name: "Mzi",
   last_name: "Mthethwa",
-  profile_image: "app/assets/images/tutors/mzi.jpg",
+  profile_image: "tutors/mzi.jpg",
   availability: "Monday, Wednesday, Friday",
   location: "Cape Town",
   email_address: "mzi@example.com",
@@ -78,7 +78,7 @@ puts "Creating students..."
 student1 = Student.create!(
   first_name: "Kat",
   last_name: "Zonke",
-  profile_image: "app/assets/images/tutors/kat.jpg",
+  profile_image: "tutors/kat.jpg",
   phone_number: 1234567890,
   bio: "A motivated student eager to learn.",
   user: user3
@@ -88,7 +88,7 @@ student1 = Student.create!(
 student2 = Student.create!(
   first_name: "Alex",
   last_name: "April",
-  profile_image: "app/assets/images/tutors/alex.jpg",
+  profile_image: "tutors/alex.jpg",
   phone_number: 1234567890,
   bio: "A motivated student eager to learn.",
   user: user4

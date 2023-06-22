@@ -14,6 +14,7 @@ resources :tutors do
   resources :tutor_reviews, only: [:new, :edit, :create, :edit, :update, :destroy,]
 end
 resources :skills, only: [:index, :show,]
+
   # Defines the root path route ("/")
   # root "articles#index"
 end
