@@ -1,9 +1,55 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1593698054498-56898cbad8af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80);">
+  <div class="container">
+    <h1><strong>Unlock Your Learning Potential With</strong> Find A Tutor</h1>
+    <p>Discover a World of Learning Opportunities and unlock your potential.</p>
+    <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
+  <div class="search-form-control form-group">
+    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+    <button name="button" type="submit" class="btn btn-flat">
+      <i class="fas fa-search"></i> Find Tutor
+    </button>
+  </div>
+</form>
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+<div>
+  <div class="container-skill">
+    <a class="btn btn-gradient" href="#">Logo Design</a>
+    <a class="btn btn-gradient" href="#">Photography</a>
+    <a class="btn btn-gradient" href="#">Guitar Lessons</a>
+    <a class="btn btn-gradient" href="#">Financial Mathematics</a>
+    <a class="btn btn-gradient" href="#">Illustration</a>
+    <%# <a class="btn btn-gradient" href="#">Organic Chemistry</a>
+    <a class="btn btn-gradient" href="#">African Languages</a>
+    <a class="btn btn-gradient" href="#">Chess</a>
+    <a class="btn btn-gradient" href="#">Painting</a>
+    <a class="btn btn-gradient" href="#">Calculus</a> %>
+  </div>
+</div>
+
+<h2>Find Tutor by Location</h2>
 <div class="cards">
-  <% @tutors.each do |tutor| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= tutor.profile_image %>">
-      <h2><%= tutor.first_name %> <%= tutor.last_name %></h2>
-      <p><%= tutor.bio %></p>
-    
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://media.timeout.com/images/105237782/image.jpg)">
+    Johannesburg
+    <div class="centered">
+      <a href="#" class="show-more-button">Show More</a>
     </div>
-  <% end %>
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.goworldtravel.com%2Fdurban-south-africa-golden-mile%2F&psig=AOvVaw387_ukRXVKEt2IQ9rgseZn&ust=1687092102730000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCNC54P2pyv8CFQAAAAAdAAAAABAE)">
+    Durban
+    <div class="centered">
+      <a href="#" class="show-more-button">Show More</a>
+    </div>
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.contentstack.io/v3/assets/blt00454ccee8f8fe6b/bltedce0a1c7693acbc/6139d401402ba23dfc223db6/US_CapeTown_SA_Header.jpg">
+    Capetown
+    <div class="centered">
+      <a href="#" class="show-more-button">Show More</a>
+    </div>
+  </div>
 </div>
