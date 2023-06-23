@@ -23,7 +23,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_17_090808) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "skill_id", null: false
+    t.bigint "skill_id"
     t.index ["skill_id"], name: "index_sessions_on_skill_id"
     t.index ["student_id"], name: "index_sessions_on_student_id"
     t.index ["tutor_id"], name: "index_sessions_on_tutor_id"
