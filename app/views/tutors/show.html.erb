@@ -1,5 +1,5 @@
 <div class="main-container-tutor-show">
-<%= cl_image_tag @tutor.photo.key, :height=>330, :width=>300, :crop=>"thumb" %>
+<%= cl_image_tag @tutor.photo.key, :gravity=>"face", :height=>300, :width=>300, :crop=>"fill", class:"tutor-show-avatar" %>
   <div class="tutor-show-info">
     <h2>  <%= "#{@tutor.first_name} #{@tutor.last_name}" %> </h2>
    <p>
