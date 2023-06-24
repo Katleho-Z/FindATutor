@@ -10,7 +10,6 @@ puts "Cleaning database..."
 Session.destroy_all
 TutorSkill.destroy_all
 StudentSkill.destroy_all
-TutorProfile.destroy_all
 Tutor.destroy_all
 Student.destroy_all
 Skill.destroy_all
@@ -60,10 +59,10 @@ puts "Creating tutors..."
 tutor1 = Tutor.create!(
   first_name: "Eti",
   last_name: "Nkanga",
-  profile_image: "app/assets/images/tutors/eti.jpg",
+  profile_image: "https://avatars.githubusercontent.com/u/79476804?v=4",
   availability: "Monday, Wednesday, Friday",
   location: "Cape Town",
-  email: "eti@example.com",
+  email_address: "eti@example.com",
   bio: "Experienced tutor with a passion for Photography.",
   user: user1
 )
@@ -71,7 +70,7 @@ tutor1 = Tutor.create!(
 tutor2 = Tutor.create!(
   first_name: "Mzi",
   last_name: "Mthethwa",
-  profile_image: "app/assets/images/tutors/mzi.jpg",
+  profile_image: "mzi.jpg",
   availability: "Monday, Wednesday, Friday",
   location: "Cape Town",
   email_address: "mzi@example.com",
@@ -84,7 +83,7 @@ puts "Creating students..."
 student1 = Student.create!(
   first_name: "Kat",
   last_name: "Zonke",
-  profile_image: "app/assets/images/tutors/kat.jpg",
+  profile_image: "kat.jpg",
   phone_number: 1234567890,
   bio: "A motivated student eager to learn.",
   user: user3
@@ -93,7 +92,7 @@ student1 = Student.create!(
 student2 = Student.create!(
   first_name: "Alex",
   last_name: "April",
-  profile_image: "app/assets/images/tutors/alex.jpg",
+  profile_image: "alex.jpg",
   phone_number: 1234567890,
   bio: "A motivated student eager to learn.",
   user: user4
@@ -127,23 +126,7 @@ student_skill2 = StudentSkill.create!(
   level: rand(1..5)
 )
 
-tutor_profile1 = TutorProfile.create(
-  bio: 'My name is Mzi and I am a graphic designer',
-  location: 'Johannesburg',
-  skills: 'Photography',
-  student_reviews: 'He is very good at mentoring',
-  tutor: tutor1
-)
-
-tutor_profile2 = TutorProfile.create(
-  bio: 'My name is Kat and I am a content creator',
-  location: 'Cape Town',
-  skills: 'Film',
-  student_reviews: 'He takes his time and is very good',
-  tutor: tutor2
-)
 # Creating Sessions
-
 puts "Creating sessions..."
 session1 = Session.create!(
   tutor: tutor1,
