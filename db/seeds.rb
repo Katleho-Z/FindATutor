@@ -1,3 +1,5 @@
+require "open-uri"
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -67,6 +69,10 @@ tutor1 = Tutor.create!(
   user: user1
 )
 
+file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+tutor1.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
+tutor1.save
+
 tutor2 = Tutor.create!(
   first_name: "Mzi",
   last_name: "Mthethwa",
@@ -77,6 +83,10 @@ tutor2 = Tutor.create!(
   bio: "Experienced tutor with a passion on teaching.",
   user: user2
 )
+
+file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+tutor2.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
+tutor2.save
 
 # Create Students
 puts "Creating students..."
