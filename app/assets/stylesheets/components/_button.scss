@@ -5,3 +5,14 @@
   color: white;
   width: 104px;
 }
+
+.custom-button {
+  background-color: transparent;
+  border: 2px solid yellow;
+  color: black;
+}
+
+.custom-button:hover {
+  background-color: black;
+  color: white;
+}

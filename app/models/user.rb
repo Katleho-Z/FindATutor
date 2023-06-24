@@ -6,10 +6,9 @@ class User < ApplicationRecord
 
          has_one :student
          has_one :tutor
-         has_one :tutor_profile
-         has_one :student_profile
 
 
-         validates :email, presence: true
+
+         validates :email, presence: true, uniqueness: true
          validates :encrypted_password, presence: true
 end

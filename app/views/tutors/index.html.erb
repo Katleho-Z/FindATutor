@@ -11,7 +11,7 @@
           <div class="card-body">
             <h5 class="card-title"><%= "#{tutor.first_name} #{tutor.last_name} - #{tutor.location}" %></h5>
             <p class="card-text"><%= tutor.availability %></p>
-            <p class="card-text"><%= tutor.reviews %></p>
+            <p class="card-text"><%= tutor.tutor_reviews %></p>
             <%= link_to "Show More", tutor_path(tutor), class: "btn btn-primary" %>
           </div>
         </div>

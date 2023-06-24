@@ -82,3 +82,4 @@ gem "devise"
 
 # Faker
 gem "faker"
+gem "sassc-rails"

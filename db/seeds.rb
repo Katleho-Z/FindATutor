@@ -40,7 +40,7 @@ photography_skill = Skill.create!(
 )
 puts "photo"
 
-painting_skill = Skill.create!(
+painting_skill= Skill.create!(
   name: "Painting"
 )
 puts "paint"
