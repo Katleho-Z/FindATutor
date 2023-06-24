@@ -3,6 +3,7 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.all
+    @tutor = Tutor.find_by(first_name: "Mzi", last_name: "Mthethwa")
   end
 
   def show
