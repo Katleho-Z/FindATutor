@@ -9,7 +9,7 @@ require "open-uri"
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Cleaning database..."
-Session.destroy_all
+Lesson.destroy_all
 TutorSkill.destroy_all
 StudentSkill.destroy_all
 Tutor.destroy_all
@@ -138,7 +138,7 @@ student_skill2 = StudentSkill.create!(
 
 # Creating Sessions
 puts "Creating sessions..."
-session1 = Session.create!(
+lesson1 = Lesson.create!(
   tutor: tutor1,
   student: student1,
   date: Date.today,
@@ -148,7 +148,7 @@ session1 = Session.create!(
   skill: english_skill
 )
 
-session2 = Session.create!(
+lesson2 = Lesson.create!(
   tutor: tutor2,
   student: student2,
   date: Date.tomorrow,

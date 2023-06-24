@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   resources :skills, only: [:index, :show]
 
+  resources :lessons, only: [:index, :create, :show, :update, :edit, :destroy,]
+
   # Other routes can be defined here
 
 end
