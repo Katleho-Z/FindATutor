@@ -13,4 +13,20 @@ class Tutor < ApplicationRecord
   validates :location, presence: true
   validates :email_address, presence: true
   validates :bio, presence: true
+
+  include PgSearch::Model
+
+  pg_search_scope :search_by_name,
+                  against: %i[first_name last_name],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
+
+  pg_search_scope :search_by_skill,
+                  associated_against: {
+                    skills: :name,
+                    using: {
+                      tsearch: { prefix: true }
+                    }
+                  }
 end

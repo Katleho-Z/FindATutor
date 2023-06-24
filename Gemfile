@@ -82,3 +82,6 @@ gem "devise"
 
 # Faker
 gem "faker"
+
+# pg_search
+gem "pg_search"

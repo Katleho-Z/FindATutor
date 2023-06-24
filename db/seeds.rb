@@ -21,7 +21,13 @@ user3 = User.create!(email: "kat@example.com", password: "password3")
 user4 = User.create!(email: "alex@example.com", password: "password4")
 # ...
 
-# Create skill
+# Delete associated Tutors
+puts "Deleting associated tutors..."
+tutor_ids = Tutor.pluck(:id)
+TutorProfile.where(tutor_id: tutor_ids).destroy_all
+Tutor.destroy(tutor_ids)
+
+# Create skills
 puts "Creating skills..."
 maths_skill = Skill.create!(
   name: "Mathematics"
@@ -35,7 +41,7 @@ photography_skill = Skill.create!(
   name: "Photography"
 )
 
-painting_skill= Skill.create!(
+painting_skill = Skill.create!(
   name: "Painting"
 )
 
@@ -47,7 +53,7 @@ biology_skill = Skill.create!(
   name: "Biology"
 )
 
-# Create Tutor
+# Create Tutors
 puts "Creating tutors..."
 tutor1 = Tutor.create!(
   first_name: "Eti",
@@ -55,7 +61,7 @@ tutor1 = Tutor.create!(
   profile_image: "john-doe.jpg",
   availability: "Monday, Wednesday, Friday",
   location: "Cape Town",
-  email_address: "eti@example.com",
+  email: "eti@example.com",
   bio: "Experienced tutor with a passion for Photography.",
   user: user1
 )
@@ -66,7 +72,7 @@ tutor2 = Tutor.create!(
   profile_image: "john-doe.jpg",
   availability: "Monday, Wednesday, Friday",
   location: "Cape Town",
-  email_address: "eti@example.com",
+  email: "mzi@example.com",
   bio: "Experienced tutor with a passion for teaching.",
   user: user2
 )
@@ -77,17 +83,16 @@ student1 = Student.create!(
   first_name: "Kat",
   last_name: "Zonke",
   profile_image: "john-doe.jpg",
-  phone_number: 1234567890,
+  phone_number: "1234567890",
   bio: "A motivated student eager to learn.",
   user: user3
 )
 
-# Create Student
 student2 = Student.create!(
   first_name: "Alex",
   last_name: "April",
   profile_image: "john-doe.jpg",
-  phone_number: 1234567890,
+  phone_number: "1234567890",
   bio: "A motivated student eager to learn.",
   user: user4
 )
@@ -142,14 +147,16 @@ student_skill2 = StudentSkill.create!(
 
 tutor_profile1 = TutorProfile.create(
   bio: 'My name is Mzi and I am a graphic designer',
-  location: 'Joburg',
+  location: 'Johannesburg',
   skills: 'Photography',
-  student_reviews: 'He is very good at mentoring'
+  student_reviews: 'He is very good at mentoring',
+  tutor: tutor1
 )
 
 tutor_profile2 = TutorProfile.create(
   bio: 'My name is Kat and I am a content creator',
   location: 'Cape Town',
   skills: 'Film',
-  student_reviews: 'He takes his time and very good'
+  student_reviews: 'He takes his time and is very good',
+  tutor: tutor2
 )

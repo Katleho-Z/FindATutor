@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-8">
+      <div id="movies">
+        <% if @tutors.any? %>
+          <% @tutors.each do |tutor| %>
+            <h4><%= tutor.name %></h4>
+            <p><%= tutor.last_name %></p>
+          <% end %>
+        <% else %>
+          <em>Sorry, no tutors found.</em>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
