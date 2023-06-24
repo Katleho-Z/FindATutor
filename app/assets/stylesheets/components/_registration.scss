@@ -1,21 +1,11 @@
-body {
-  background-color: #ffb406;
-  color: rgb(207, 207, 195);
-  margin: 0;
-  padding: 0;
-}
+
 
 .login-container {
   margin-top: 50px;
   text-align: center;
 }
 
-h1 {
-  font-size: 40px;
-  text-transform: uppercase;
-  color: white;
-  font-weight: bolder;
-}
+
 
 .form-column {
   display: inline-block;
@@ -25,20 +15,14 @@ h1 {
 
 #login-section,
 #signup-section {
-  background-color: rgb(77, 77, 49);
+  background-color: rgb(255, 170, 13);
   padding: 20px;
   border-radius: 5px;
 }
 
 .title {
   font-size: 18px;
-  color: #898889;
-  font-weight: bold;
-}
-
-h2 {
-  font-size: 18px;
-  color: white;
+  color: #ffffff;
   font-weight: bold;
 }
 
@@ -51,5 +35,5 @@ h2 {
 }
 
 a {
-  color: yellow;
+  color: rgb(255, 184, 5);
 }

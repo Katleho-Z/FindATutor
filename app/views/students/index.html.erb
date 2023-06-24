@@ -1,9 +1,122 @@
-<div class="cards">
-  <% @tutors.each do |tutor| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= tutor.profile_image %>">
-      <h2><%= tutor.first_name %> <%= tutor.last_name %></h2>
-      <p><%= tutor.bio %></p>
-    
+<div class="container">
+  <div class="student-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1610484826967-09c5720778c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80);">
+    <div class="container-inner">
+      <h1><strong>Unlock Your Learning Potential With</strong> Find A Tutor</h1>
+      <p>Discover a World of Learning Opportunities and unlock your potential.</p>
+      <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
+        <div class="search-form-control form-group">
+          <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+          <button name="button" type="submit" class="btn btn-flat">
+            <i class="fas fa-search"></i> Find Tutor
+          </button>
+        </div>
+      </form>
     </div>
-  <% end %>
+  </div>
+</div>
+
+  <div class="spacer"></div>
+
+<div class="profile_card_container">
+  <figure class="profile_card">
+    <figure class="profile_card hover">
+      <img src="https://res.cloudinary.com/daewg6dpy/image/upload/v1687005451/katleho_vhki14.jpg" alt="sample74" />
+      <figcaption>
+        <h2>Katleho Zonke</h2>
+        <h3>Illustration, Photography</h3>
+        <a href="#" class="follow">Reviews</a>
+        <a href="#" class="info">Show More</a>
+      </figcaption>
+    </figure>
+  </figure>
+
+  <figure class="profile_card">
+    <figure class="profile_card hover">
+      <img src="https://res.cloudinary.com/daewg6dpy/image/upload/v1687005451/katleho_vhki14.jpg" alt="sample74" />
+      <figcaption>
+        <h2>Katleho Zonke</h2>
+        <h3>Illustration, Photography</h3>
+        <a href="#" class="follow">Reviews</a>
+        <a href="#" class="info">Show More</a>
+      </figcaption>
+    </figure>
+  </figure>
+
+  <figure class="profile_card">
+    <figure class="profile_card hover">
+      <img src="https://res.cloudinary.com/daewg6dpy/image/upload/v1687005451/katleho_vhki14.jpg" alt="sample74" />
+      <figcaption>
+        <h2>Katleho Zonke</h2>
+        <h3>Illustration, Photography</h3>
+        <a href="#" class="follow">Reviews</a>
+        <a href="#" class="info">Show More</a>
+      </figcaption>
+    </figure>
+  </figure>
+</div>
+
+<h2>Find Tutor by Location</h2>
+<div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://media.timeout.com/images/105237782/image.jpg)">
+    Johannesburg
+    <div class="centered">
+      <a href="#" class="show-more-button">Show More</a>
+    </div>
+  </div>
+
+  <div class="container-inner">
+    <div class="container-skill">
+      <a class="btn btn-gradient" href="#">Logo Design</a>
+      <a class="btn btn-gradient" href="#">Photography</a>
+      <a class="btn btn-gradient" href="#">Guitar Lessons</a>
+      <a class="btn btn-gradient" href="#">Biology</a>
+      <a class="btn btn-gradient" href="#">Financial Mathematics</a>
+      <a class="btn btn-gradient" href="#">Illustration</a>
+      <a class="btn btn-gradient" href="#">Chess</a>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+<div class="tutor-cards>
+<figure class="profile_card>
+  <figure class="profile_card hover"><img src="https://res.cloudinary.com/daewg6dpy/image/upload/v1687005451/katleho_vhki14.jpg" alt="sample74" />
+    <figcaption>
+      <h2>Katleho Zonke</h2>
+      <h3>Illustration, Photography</h3>
+      <a href="#" class="follow">Reviews</a>
+      <a href="#" class="info">Show More</a>
+    </figcaption>
+  </figure>
+</figure>
+</div>
+
+  <div class="container-inner">
+  <h4> Find Tutor by Location <h4>
+    <div class="cards">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://img.sixt.com/1600/Cape_Town_%7C_in_TYPO_cape-town-city-content.jpg)">
+        Johannesburg
+      </div>
+
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.sa-venues.com/attractionskzn/gallery/greaterdurban/1b.jpg)">
+        Durban
+      </div>
+
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Aerial_View_of_Sea_Point%2C_Cape_Town_South_Africa.jpg/1200px-Aerial_View_of_Sea_Point%2C_Cape_Town_South_Africa.jpg)">
+        Capetown
+      </div>
+
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://lp-cms-production.imgix.net/2019-06/478157521_full.jpg)">
+        Port Elizabeth
+      </div>
+
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://interestingfacts.co.za/wp-content/uploads/2022/09/Polokwane.jpg)">
+        Polokwane
+      </div>
+
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://upload.wikimedia.org/wikipedia/commons/f/f4/Stellenbosch_University.jpg)">
+        Stellenbosch
+      </div>
+    </div>
+  </div>
 </div>

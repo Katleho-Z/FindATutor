@@ -7,11 +7,14 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Cleaning database..."
-User.destroy_all
+Session.destroy_all
+TutorSkill.destroy_all
+StudentSkill.destroy_all
+TutorProfile.destroy_all
 Tutor.destroy_all
 Student.destroy_all
 Skill.destroy_all
-Session.destroy_all
+User.destroy_all
 
 # Create Users
 puts "Creating users..."
@@ -21,44 +24,43 @@ user3 = User.create!(email: "kat@example.com", password: "password3")
 user4 = User.create!(email: "alex@example.com", password: "password4")
 # ...
 
-# Delete associated Tutors
-puts "Deleting associated tutors..."
-tutor_ids = Tutor.pluck(:id)
-TutorProfile.where(tutor_id: tutor_ids).destroy_all
-Tutor.destroy(tutor_ids)
-
 # Create skills
 puts "Creating skills..."
 maths_skill = Skill.create!(
   name: "Mathematics"
 )
+puts "math"
 
 english_skill = Skill.create!(
   name: "English"
 )
+puts "Eng"
 
 photography_skill = Skill.create!(
   name: "Photography"
 )
+puts "photo"
 
 painting_skill = Skill.create!(
   name: "Painting"
 )
-
+puts "paint"
 illustration_skill = Skill.create!(
   name: "Illustration"
 )
+puts "illus"
 
 biology_skill = Skill.create!(
   name: "Biology"
 )
+puts "bio"
 
 # Create Tutors
 puts "Creating tutors..."
 tutor1 = Tutor.create!(
   first_name: "Eti",
   last_name: "Nkanga",
-  profile_image: "john-doe.jpg",
+  profile_image: "app/assets/images/tutors/eti.jpg",
   availability: "Monday, Wednesday, Friday",
   location: "Cape Town",
   email: "eti@example.com",
@@ -69,11 +71,11 @@ tutor1 = Tutor.create!(
 tutor2 = Tutor.create!(
   first_name: "Mzi",
   last_name: "Mthethwa",
-  profile_image: "john-doe.jpg",
+  profile_image: "app/assets/images/tutors/mzi.jpg",
   availability: "Monday, Wednesday, Friday",
   location: "Cape Town",
-  email: "mzi@example.com",
-  bio: "Experienced tutor with a passion for teaching.",
+  email_address: "mzi@example.com",
+  bio: "Experienced tutor with a passion on teaching.",
   user: user2
 )
 
@@ -82,8 +84,8 @@ puts "Creating students..."
 student1 = Student.create!(
   first_name: "Kat",
   last_name: "Zonke",
-  profile_image: "john-doe.jpg",
-  phone_number: "1234567890",
+  profile_image: "app/assets/images/tutors/kat.jpg",
+  phone_number: 1234567890,
   bio: "A motivated student eager to learn.",
   user: user3
 )
@@ -91,30 +93,10 @@ student1 = Student.create!(
 student2 = Student.create!(
   first_name: "Alex",
   last_name: "April",
-  profile_image: "john-doe.jpg",
-  phone_number: "1234567890",
+  profile_image: "app/assets/images/tutors/alex.jpg",
+  phone_number: 1234567890,
   bio: "A motivated student eager to learn.",
   user: user4
-)
-
-# Creating Sessions
-puts "Creating sessions..."
-session1 = Session.create!(
-  tutor: tutor1,
-  student: student1,
-  date: Date.today,
-  time: Time.now,
-  amount_offered: 50.0,
-  status: "Pending"
-)
-
-session2 = Session.create!(
-  tutor: tutor2,
-  student: student2,
-  date: Date.tomorrow,
-  time: Time.now + 1.hour,
-  amount_offered: 75.0,
-  status: "Confirmed"
 )
 
 # Creating tutor's skills
@@ -159,4 +141,26 @@ tutor_profile2 = TutorProfile.create(
   skills: 'Film',
   student_reviews: 'He takes his time and is very good',
   tutor: tutor2
+)
+# Creating Sessions
+
+puts "Creating sessions..."
+session1 = Session.create!(
+  tutor: tutor1,
+  student: student1,
+  date: Date.today,
+  time: Time.now,
+  amount_offered: 50.0,
+  status: "Pending",
+  skill: english_skill
+)
+
+session2 = Session.create!(
+  tutor: tutor2,
+  student: student2,
+  date: Date.tomorrow,
+  time: Time.now + 1.hour,
+  amount_offered: 75.0,
+  status: "Confirmed",
+  skill: painting_skill
 )
