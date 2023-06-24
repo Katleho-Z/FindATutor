@@ -4,10 +4,10 @@ class Tutor < ApplicationRecord
   has_many :sessions
   has_many :student_reviews
   has_many :skills, through: :tutor_skills
+  has_one_attached :photo
 
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :profile_image, presence: true
   validates :availability, presence: true
   validates :user_id, presence: true
   validates :location, presence: true

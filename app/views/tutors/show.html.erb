@@ -1,5 +1,5 @@
 <div class="main-container-tutor-show">
-  <img src="https://files.slack.com/files-pri/T02NE0241-F05CZPGNLMV/504a0436-3.jpg" width="300px" height="300px" alt="tutor_picture">
+<%= cl_image_tag @tutor.photo.key, :height=>330, :width=>300, :crop=>"thumb" %>
   <div class="tutor-show-info">
     <h2>  <%= "#{@tutor.first_name} #{@tutor.last_name}" %> </h2>
    <p>

@@ -1,12 +1,12 @@
 <h1>Create Tutor Account</h1>
 
-<%= simple_form_for @tutor, url: tutor_profile_path do |form| %>
+<%= simple_form_for @tutor do |form| %>
   <%= form.input :first_name %>
   <%= form.input :last_name %>
-  <%= form.input :profile_image %>
   <%= form.input :location %>
   <%= form.input :email_address %>
   <%= form.input :bio %>
+  <%= form.input :photo, as: :file %>
 
 
   <%= form.button :submit, "Create Tutor Account" %>
