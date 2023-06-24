@@ -28,26 +28,31 @@ puts "Creating skills..."
 maths_skill = Skill.create!(
   name: "Mathematics"
 )
+puts "math"
 
 english_skill = Skill.create!(
   name: "English"
 )
+puts "Eng"
 
 photography_skill = Skill.create!(
   name: "Photography"
 )
+puts "photo"
 
 painting_skill= Skill.create!(
   name: "Painting"
 )
-
+puts "paint"
 illustration_skill = Skill.create!(
   name: "Illustration"
 )
+puts "illus"
 
 biology_skill = Skill.create!(
   name: "Biology"
 )
+puts "bio"
 
 # Create Tutor
 puts "Creating tutors..."
@@ -94,28 +99,6 @@ student2 = Student.create!(
   user: user4
 )
 
-# Creating Sessions
-puts "Creating sessions..."
-session1 = Session.create!(
-  tutor: tutor1,
-  student: student1,
-  date: Date.today,
-  time: Time.now,
-  amount_offered: 50.0,
-  status: "Pending",
-  skill_id: english_skill.id,
-)
-
-session2 = Session.create!(
-  tutor: tutor2,
-  student: student2,
-  date: Date.tomorrow,
-  time: Time.now + 1.hour,
-  amount_offered: 75.0,
-  status: "Confirmed",
-  skill_id: painting_skill.id
-)
-
 # Creating tutor's skills
 puts "Creating tutor_skills..."
 tutor_skill1 = TutorSkill.create!(
@@ -142,4 +125,27 @@ student_skill2 = StudentSkill.create!(
   student: student2,
   skill: illustration_skill,
   level: rand(1..5)
+)
+
+# Creating Sessions
+
+puts "Creating sessions..."
+session1 = Session.create!(
+  tutor: tutor1,
+  student: student1,
+  date: Date.today,
+  time: Time.now,
+  amount_offered: 50.0,
+  status: "Pending",
+  skill: english_skill
+)
+
+session2 = Session.create!(
+  tutor: tutor2,
+  student: student2,
+  date: Date.tomorrow,
+  time: Time.now + 1.hour,
+  amount_offered: 75.0,
+  status: "Confirmed",
+  skill: painting_skill
 )
