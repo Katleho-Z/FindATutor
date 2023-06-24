@@ -82,4 +82,9 @@ gem "devise"
 
 # Faker
 gem "faker"
+
+# pg_search
+gem "pg_search"
+
+# sassc-rails
 gem "sassc-rails"

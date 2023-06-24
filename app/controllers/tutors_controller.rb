@@ -2,7 +2,11 @@ class TutorsController < ApplicationController
   before_action :set_tutor, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tutors = Tutor.all
+    if params[:query].present?
+      @tutors = Tutor.search_by_name(params[:query])
+    else
+      @tutors = Tutor.all
+    end
   end
 
   def show

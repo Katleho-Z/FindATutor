@@ -1,4 +1,16 @@
 <div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-8 my-3">
+      <%= form_with url: tutors_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Type a keyword"
+          %>
+        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
   <div class="row">
     <% @tutors.each do |tutor| %>
       <div class="col-md-4">
@@ -11,7 +23,7 @@
           <div class="card-body">
             <h5 class="card-title"><%= "#{tutor.first_name} #{tutor.last_name} - #{tutor.location}" %></h5>
             <p class="card-text"><%= tutor.availability %></p>
-            <p class="card-text"><%= tutor.tutor_reviews %></p>
+            <%# <p class="card-text"><%= tutor.tutor_reviews</p> %>
             <%= link_to "Show More", tutor_path(tutor), class: "btn btn-primary" %>
           </div>
         </div>

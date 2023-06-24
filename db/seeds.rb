@@ -23,7 +23,7 @@ user3 = User.create!(email: "kat@example.com", password: "password3")
 user4 = User.create!(email: "alex@example.com", password: "password4")
 # ...
 
-# Create skill
+# Create skills
 puts "Creating skills..."
 maths_skill = Skill.create!(
   name: "Mathematics"
@@ -40,7 +40,7 @@ photography_skill = Skill.create!(
 )
 puts "photo"
 
-painting_skill= Skill.create!(
+painting_skill = Skill.create!(
   name: "Painting"
 )
 puts "paint"
@@ -54,12 +54,12 @@ biology_skill = Skill.create!(
 )
 puts "bio"
 
-# Create Tutor
+# Create Tutors
 puts "Creating tutors..."
 tutor1 = Tutor.create!(
   first_name: "Eti",
   last_name: "Nkanga",
-  profile_image: "app/assets/images/tutors/eti.jpg",
+  profile_image: "https://avatars.githubusercontent.com/u/79476804?v=4",
   availability: "Monday, Wednesday, Friday",
   location: "Cape Town",
   email_address: "eti@example.com",
@@ -70,7 +70,7 @@ tutor1 = Tutor.create!(
 tutor2 = Tutor.create!(
   first_name: "Mzi",
   last_name: "Mthethwa",
-  profile_image: "app/assets/images/tutors/mzi.jpg",
+  profile_image: "mzi.jpg",
   availability: "Monday, Wednesday, Friday",
   location: "Cape Town",
   email_address: "mzi@example.com",
@@ -83,17 +83,16 @@ puts "Creating students..."
 student1 = Student.create!(
   first_name: "Kat",
   last_name: "Zonke",
-  profile_image: "app/assets/images/tutors/kat.jpg",
+  profile_image: "kat.jpg",
   phone_number: 1234567890,
   bio: "A motivated student eager to learn.",
   user: user3
 )
 
-# Create Student
 student2 = Student.create!(
   first_name: "Alex",
   last_name: "April",
-  profile_image: "app/assets/images/tutors/alex.jpg",
+  profile_image: "alex.jpg",
   phone_number: 1234567890,
   bio: "A motivated student eager to learn.",
   user: user4
@@ -128,7 +127,6 @@ student_skill2 = StudentSkill.create!(
 )
 
 # Creating Sessions
-
 puts "Creating sessions..."
 session1 = Session.create!(
   tutor: tutor1,
