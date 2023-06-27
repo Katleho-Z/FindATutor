@@ -1,22 +1,23 @@
 <div class="main-container-tutor-show">
-<%= cl_image_tag @tutor.photo.key, :gravity=>"face", :height=>300, :width=>300, :crop=>"fill", class:"tutor-show-avatar" %>
+  <%= cl_image_tag @tutor.photo.key, :gravity=>"face", :height=>300, :width=>300, :crop=>"fill", class:"tutor-show-avatar" %>
   <div class="tutor-show-info">
-    <h2>  <%= "#{@tutor.first_name} #{@tutor.last_name}" %> </h2>
-   <p>
-      <% @tutor.skills.each do | skill | %>
+    <h2><%= "#{@tutor.first_name} #{@tutor.last_name}" %></h2>
+    <p>
+      <% @tutor.skills.each do |skill| %>
         <%= skill.name %>
       <% end %>
     </p>
-    <p> <%= "Location: #{@tutor.location}" %> </p>
-    <p> <%= "Email Address: #{@tutor.email_address}" %> </p>
+    <p><%= "Location: #{@tutor.location}" %></p>
+    <p><%= "Email Address: #{@tutor.email_address}" %></p>
     <div class="tutor-show-reviews">
-      <p> Reviews </p>
-      <p> 4.5 </p>
+      <p>Reviews</p>
+      <p>4.5</p>
     </div>
-    <p class="black-btn"> Messages </p>
+    <%= link_to "Message", "#", class: "btn btn-primary" %>
+    <%= link_to "Request Lesson", "#", class: "btn btn-primary" %>
   </div>
   <div class="tutor-show-bio">
-   <h3> Bio </h3>
-    <p> <%= @tutor.bio %> </p>
+    <h3>Bio</h3>
+    <p><%= @tutor.bio %></p>
   </div>
 </div>
