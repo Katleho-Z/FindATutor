@@ -1,0 +1,62 @@
+.main-container-tutor-show {
+  background-color: #000000;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.tutor-show-avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.tutor-show-info {
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+.tutor-show-info h2 {
+  margin-bottom: 10px;
+}
+
+.tutor-show-info p {
+  margin-bottom: 5px;
+}
+
+.tutor-show-reviews {
+  margin-top: 20px;
+  color: white;
+}
+
+.tutor-show-reviews p {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.tutor-show-bio {
+  margin-top: 20px;
+  color: white;
+}
+
+.tutor-show-bio h3 {
+  margin-bottom: 10px;
+  color: white;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000000;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #000000;
+}

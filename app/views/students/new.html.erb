@@ -1,12 +1,17 @@
-<h1>Create Student Account</h1>
-
-<%= simple_form_for @student do |form| %>
-  <%= form.input :first_name %>
-  <%= form.input :last_name %>
-  <%= form.input :phone_number %>
-  <%= form.input :bio %>
-  <%= form.input :photo, as: :file %>
-
-
-<%= button_to "Create Student Account", students_path, method: :get %>
-<% end %>
+ <div class="form-column">
+    <div id="signup-section">
+      <%= simple_form_for @student do |f| %>
+        <div class="form-inputs">
+          <h1>Create Student Account</h1>
+          <%= f.input :first_name %>
+          <%= f.input :last_name %>
+          <%= f.input :profile_image, as: :file %>
+          <%= f.input :phone_number %>
+          <%= f.input :bio, as: :text %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Create Student Account", class: "btn-submit" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
