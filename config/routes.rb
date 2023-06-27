@@ -3,8 +3,9 @@ Rails.application.routes.draw do
 
   root to: "pages#home"
 
-resources :blogs
+  resources :blogs
 
+  resources :lessons, only: [:new, :create]
 
   resources :students do
     resources :student_skills, only: [:new, :create, :edit, :update, :destroy]
