@@ -29,11 +29,12 @@
             <div class="placeholder-image"></div>
           <% end %>
           <div class="card-body">
-            <h5 class="card-title"><%= "#{tutor.first_name} #{tutor.last_name} - #{tutor.location}" %></h5>
-            <p class="card-text"><%= tutor.availability %></p>
-            <%# <p class="card-text"><%= tutor.tutor_reviews</p> %>
-            <%= link_to "Show More", tutor_path(tutor), class: "btn btn-primary" %>
-          </div>
+  <h5 class="card-title">
+    <strong><%= tutor.first_name %> <%= tutor.last_name %></strong> - <%= tutor.location %>
+  </h5>
+  <p class="card-text">Available: <%= tutor.availability %></p>
+  <%= link_to "Show More", tutor_path(tutor), class: "btn btn-primary" %>
+</div>
         </div>
       </div>
     <% end %>
@@ -82,9 +83,4 @@
 
 
 
-<div class="student-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1610484826967-09c5720778c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80);">
-    <div class="container-inner">
-      <h1><strong>Unlock Your Learning Potential With</strong> Find A Tutor</h1>
-      <p>Discover a World of Learning Opportunities and unlock your potential.</p>
-    </div>
-</div>
+

@@ -2,6 +2,7 @@ class Tutor < ApplicationRecord
   belongs_to :user
   has_many :tutor_skills
   has_many :sessions
+  has_many :blogs
   has_many :student_reviews
   has_many :skills, through: :tutor_skills
   has_one_attached :photo

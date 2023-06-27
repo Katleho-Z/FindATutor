@@ -1,13 +1,18 @@
-<h1>Create Tutor Account</h1>
-
-<%= simple_form_for @tutor do |form| %>
-  <%= form.input :first_name %>
-  <%= form.input :last_name %>
-  <%= form.input :location %>
-  <%= form.input :email_address %>
-  <%= form.input :bio %>
-  <%= form.input :photo, as: :file %>
-
-
-  <%= form.button :submit, "Create Tutor Account" %>
-<% end %>
+<div class="form-column">
+  <div id="signup-section">
+    <%= simple_form_for @tutor do |f| %>
+      <div class="form-inputs">
+        <h1>Create Your Tutor Account</h1>
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+        <%= f.input :location %>
+        <%= f.input :email_address %>
+        <%= f.input :profile_image, as: :file %>
+        <%= f.input :bio %>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, "Become A Tutor", class: "btn-submit" %>
+      </div>
+    <% end %>
+  </div>
+</div>
