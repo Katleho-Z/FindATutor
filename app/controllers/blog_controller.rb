@@ -57,4 +57,5 @@ class BlogsController < ApplicationController
   def authorize_blog_owner!
     redirect_to blogs_url, alert: "You are not authorized to perform this action." unless current_tutor == @blog.tutor
   end
+class BlogController < ApplicationController
 end

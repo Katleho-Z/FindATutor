@@ -1,0 +1,16 @@
+<div class="form-column">
+    <div id="signup-section">
+      <%= simple_form_for @student do |f| %>
+        <div class="form-inputs">
+         <h1>Write your own Articles</h1>
+         <%= f.input :title, label: "Title" %>
+          <%= f.input :content, label: "Content", as: :text %>
+          <%= f.input :skill_id, label: "Skill", collection: Skill.all, prompt: "Select a Skill" %>
+
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Publish", class: "btn-submit" %>
+        </div>
+      <% end %>
+    </div>
+  </div>

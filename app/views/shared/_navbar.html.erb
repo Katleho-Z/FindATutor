@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag("logo2.png", alt: "Logo Image", height: '50px') %>
     <% end %>
 
@@ -10,16 +10,15 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto"> <!-- Modified class: ms-auto -->
-        <% if user_signed_in? %>
+        <% if user_signed_in?  %>
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
-          <li class="nav-item">
-            <%= link_to "Sessions", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "About us", "#", class: "nav-link" %>
-          </li>
+
+         <li class="nav-item">
+           <%= link_to "Lessons", lessons_path, class: "nav-link" %>
+        </li>
+
           <li class="nav-item">
             <%= link_to "Blog", "#", class: "nav-link" %>
           </li>

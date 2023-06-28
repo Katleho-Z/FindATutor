@@ -1,55 +1,27 @@
 <div class="login-container">
-    <h1>Welcome To Find Tutor</h1>
-    <h2 class="title">Unlock Your Potential With The perfect Tutoring Match</h2>
-    <div class="form-column">
-      <div id="login-section">
-        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <div class="form-inputs">
-            <h2>Login To Your Account</h2>
-            <%= f.input :email,
-                        required: false,
-                        autofocus: true,
-                        input_html: { autocomplete: "email" } %>
-            <%= f.input :password,
-                        required: false,
-                        input_html: { autocomplete: "current-password" } %>
-            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+  <div class="form-column">
+        <h1>Welcome To Find Tutor</h1>
+        <div id="login-section">
+          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="form-inputs">
+              <h2>Login To Your Account</h2>
+              <%= f.input :email,
+                          required: false,
+                          autofocus: true,
+                          input_html: { autocomplete: "email" } %>
+              <%= f.input :password,
+                          required: false,
+                          input_html: { autocomplete: "current-password" } %>
+              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+            </div>
+            <div class="form-actions">
+              <%= f.button :submit, "Log in", class: "btn-submit" %>
+            </div>
+          <% end %>
+          <div class="form-toggle">
+            <p>Don't have an account? <a class="btn btn-submit" href="#signup-section">Sign up</a></p>
           </div>
-          <div class="form-actions">
-            <%= f.button :submit, "Log in", class: "btn-submit" %>
-          </div>
-        <% end %>
-        <div class="form-toggle">
-          <p>Don't have an account? <a href="#signup-section">Sign up</a></p>
         </div>
       </div>
-    </div>
-
-    <div class="form-column">
-      <div id="signup-section">
-        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <div class="form-inputs">
-            <h2>Create Your Account</h2>
-            <%= f.input :email,
-                        required: true,
-                        autofocus: true,
-                        input_html: { autocomplete: "email" } %>
-            <%= f.input :password,
-                        required: true,
-                        input_html: { autocomplete: "new-password" } %>
-            <%= f.input :password_confirmation,
-                        required: true,
-                        input_html: { autocomplete: "new-password" } %>
-            <%= f.input :student, as: :boolean if devise_mapping.rememberable? %>
-            <%= f.input :tutor, as: :boolean if devise_mapping.rememberable? %>
-          </div>
-          <div class="form-actions">
-            <%= f.button :submit, "Sign up", class: "btn-submit" %>
-          </div>
-        <% end %>
-        <div class="form-toggle">
-          <p>Already have an account? <a href="#login-section">Log in</a></p>
-        </div>
-      </div>
-    </div>
   </div>
+</div>
