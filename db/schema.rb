@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_24_103354) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_28_084159) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,19 +42,30 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_24_103354) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "sessions", force: :cascade do |t|
+  create_table "blogs", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.bigint "skill_id", null: false
+    t.bigint "tutor_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["skill_id"], name: "index_blogs_on_skill_id"
+    t.index ["tutor_id"], name: "index_blogs_on_tutor_id"
+  end
+
+  create_table "lessons", force: :cascade do |t|
     t.bigint "tutor_id", null: false
     t.bigint "student_id", null: false
     t.date "date"
     t.time "time"
     t.float "amount_offered"
     t.string "status"
+    t.bigint "skill_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "skill_id"
-    t.index ["skill_id"], name: "index_sessions_on_skill_id"
-    t.index ["student_id"], name: "index_sessions_on_student_id"
-    t.index ["tutor_id"], name: "index_sessions_on_tutor_id"
+    t.index ["skill_id"], name: "index_lessons_on_skill_id"
+    t.index ["student_id"], name: "index_lessons_on_student_id"
+    t.index ["tutor_id"], name: "index_lessons_on_tutor_id"
   end
 
   create_table "skills", force: :cascade do |t|
@@ -158,17 +169,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_24_103354) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "sessions", "skills"
-  add_foreign_key "sessions", "students"
-  add_foreign_key "sessions", "tutors"
-  add_foreign_key "student_reviews", "sessions"
+  add_foreign_key "blogs", "skills"
+  add_foreign_key "blogs", "tutors"
+  add_foreign_key "lessons", "skills"
+  add_foreign_key "lessons", "students"
+  add_foreign_key "lessons", "tutors"
   add_foreign_key "student_reviews", "tutors"
   add_foreign_key "student_skills", "skills"
   add_foreign_key "student_skills", "students"
   add_foreign_key "students", "users"
   add_foreign_key "tutor_profiles", "student_reviews", column: "student_reviews_id"
   add_foreign_key "tutor_profiles", "users"
-  add_foreign_key "tutor_reviews", "sessions"
   add_foreign_key "tutor_reviews", "students"
   add_foreign_key "tutor_skills", "skills"
   add_foreign_key "tutor_skills", "tutors"

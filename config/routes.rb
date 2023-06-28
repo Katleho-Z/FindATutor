@@ -17,4 +17,6 @@ Rails.application.routes.draw do
 
   # Other routes can be defined here
 
+  resources :blogs
+
 end
