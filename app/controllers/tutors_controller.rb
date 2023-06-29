@@ -19,8 +19,9 @@ class TutorsController < ApplicationController
   def create
     @tutor = Tutor.new(tutor_params)
     @tutor.user = current_user
+
     if @tutor.save
-      redirect_to @tutor, notice: 'Tutor was successfully created.'
+      redirect_to tutor_path(@tutor), notice: 'Tutor was successfully created.'
     else
       render :new
     end
@@ -31,6 +32,7 @@ class TutorsController < ApplicationController
 
   def update
     if @tutor.update(tutor_params)
+
       redirect_to @tutor, notice: 'Tutor was successfully updated.'
     else
       render :edit
