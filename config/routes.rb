@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  get 'static_pages/about'
   devise_for :users
 
   root to: "pages#home"
 
-resources :blogs
+
+
+
+  resources :blogs
 
 
   resources :students do
@@ -22,5 +26,9 @@ resources :blogs
 
 
   # Other routes can be defined here
+
+
+  get 'about', to: 'static_pages#about'
+
 
 end

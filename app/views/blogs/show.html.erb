@@ -1,0 +1,12 @@
+<h1><%= @blog.title %></h1>
+
+<div>
+  <p><strong>Author:</strong> <%= @blog.tutor.first_name %></p>
+  <p><strong>Skill:</strong> <%= @blog.skill.name %></p>
+</div>
+
+<div>
+  <%= @blog.content %>
+</div>
+
+<%= link_to 'Back', blogs_path %>

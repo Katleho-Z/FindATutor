@@ -7,7 +7,7 @@ class StudentsController < ApplicationController
   end
 
   def show
-    
+
   end
 
   def new
@@ -18,7 +18,7 @@ class StudentsController < ApplicationController
     @student = Student.new(student_params)
     @student.user = current_user
     if @student.save
-      redirect_to tutors_path, notice: 'Student was successfully created.'
+      redirect_to student_path(@student), notice: 'Student was successfully created.'
     else
       render :new, status: :uprocessable_entity
     end
