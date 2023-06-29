@@ -1,0 +1,6 @@
+<!-- app/views/messages/_message.html.erb -->
+<div class="message">
+  <p><%= message.content %></p>
+  <p>From: <%= message.sender.class.name %> (<%= message.sender.full_name %>)</p>
+  <p>Sent at: <%= message.created_at.strftime('%Y-%m-%d %H:%M:%S') %></p>
+</div>

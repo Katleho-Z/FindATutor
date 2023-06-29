@@ -3,12 +3,12 @@ Rails.application.routes.draw do
 
   root to: "pages#home"
 
-resources :blogs
-
+  resources :blogs
 
   resources :students do
     resources :student_skills, only: [:new, :create, :edit, :update, :destroy]
     resources :student_reviews, only: [:new, :create, :edit, :update, :destroy]
+    resources :chatrooms, only: [:create]
   end
 
   resources :tutors do
@@ -20,7 +20,8 @@ resources :blogs
 
   resources :lessons, only: [:index, :create, :show, :update, :edit, :destroy,]
 
-
+  resources :chatrooms, only: [:show] do
+    resources :messages, only: [:create]
+  end
   # Other routes can be defined here
-
 end
