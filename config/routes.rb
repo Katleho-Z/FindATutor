@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :blogs
 
+  resources :lessons, only: [:new, :create]
+
   resources :students do
     resources :student_skills, only: [:new, :create, :edit, :update, :destroy]
     resources :student_reviews, only: [:new, :create, :edit, :update, :destroy]

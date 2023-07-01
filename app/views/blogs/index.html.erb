@@ -1,3 +1,5 @@
+<div class="form-column">
+
 <h1>Blog Posts</h1>
 
 <% @blogs.each do |blog| %>
@@ -6,5 +8,7 @@
     <p><%= truncate(blog.content, length: 150) %></p>
     <p><strong>Author:</strong> <%= blog.tutor.first_name %></p>
     <p><strong>Skill:</strong> <%= blog.skill.name %></p>
+    <%= link_to "Read More", blog_path(blog), class: "btn btn-primary" %>
   </div>
 <% end %>
+</div>
