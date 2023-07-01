@@ -9,6 +9,8 @@ require "open-uri"
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Cleaning database..."
+Message.destroy_all
+Chatroom.destroy_all
 Lesson.destroy_all
 TutorSkill.destroy_all
 StudentSkill.destroy_all

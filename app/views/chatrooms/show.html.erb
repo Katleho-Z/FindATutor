@@ -1,49 +1,26 @@
-<h1><strong>Chatroom</strong></h1>
+<div class="container chatroom"
+  data-controller="chatroom-subscription"
+  data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
+>
+  <h1>Chatroom</h1>
 
-<div id="chatroom">
-  <% @chatroom.messages.each do |message| %>
-    <div class="message">
-      <p class="content"><%= message.content %></p>
-      <div class="meta">
-        <p class="sender">From: <%= message.sender.class.name %> (<%= message.sender.full_name %>)</p>
-        <p class="timestamp">Sent at: <%= message.created_at.strftime('%Y-%m-%d %H:%M:%S') %></p>
-      </div>
-    </div>
+  <div class="messages" data-chatroom-subscription-target="messages">
+    <% @chatroom.messages.each do |message| %>
+      <%= render "messages/message", message: message %>
+    <% end %>
+  </div>
+
+  <div class="notice">
+    <p>Please Take Note That This Chatroom Prohibits Any Use Of Offensive Language.</p>
+  </div>
+  <%= simple_form_for [@chatroom, @message],
+  html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex"} do |f|
+  %>
+    <%= f.input :content,
+      label: false,
+      placeholder: "Type your message",
+      wrapper_html: {class: "message-input"}
+    %>
+    <%= f.submit "Send", class: "send-button" %>
   <% end %>
 </div>
-
-<div class="notice">
-  <p>Please Take Note That This Chatroom Prohibit Any Use Of Offensive Language.</p>
-</div>
-
-<%= form_with model: [@chatroom, @message], id: "message-form", remote: true do |form| %>
-  <%= form.text_field :content, placeholder: "Type your message...", class: "message-input" %>
-  <%= form.submit "Send", class: "send-button" %>
-<% end %>
-
-<script>
-  // Handle the incoming messages from the WebSocket connection
-  document.addEventListener('DOMContentLoaded', function() {
-    const chatroomElement = document.getElementById('chatroom');
-
-    App.chat = App.cable.subscriptions.create({
-      channel: 'ChatChannel',
-      chatroom_id: <%= @chatroom.id %>
-    }, {
-      received: function(data) {
-        const messageElement = document.createElement('div');
-        messageElement.innerHTML = data.message;
-        chatroomElement.appendChild(messageElement);
-      }
-    });
-
-    // Submit the message form via AJAX when submitted
-    const messageForm = document.getElementById('message-form');
-    messageForm.addEventListener('submit', function(event) {
-      event.preventDefault();
-      const content = event.target.querySelector('input[type="text"]').value;
-      App.chat.receive({ message: content });
-      event.target.reset();
-    });
-  });
-</script>

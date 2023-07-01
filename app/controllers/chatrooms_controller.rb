@@ -19,9 +19,8 @@ class ChatroomsController < ApplicationController
     end
 
     if @chatroom.save
-      redirect_to @chatroom
+      redirect_to chatroom_path(@chatroom)
     end
-
     # redirect_to chatroom_path(@chatroom)
   end
 end

@@ -1,6 +1,12 @@
 <!-- app/views/messages/_message.html.erb -->
-<div class="message">
-  <p><%= message.content %></p>
-  <p>From: <%= message.sender.class.name %> (<%= message.sender.full_name %>)</p>
-  <p>Sent at: <%= message.created_at.strftime('%Y-%m-%d %H:%M:%S') %></p>
+<div class="message" id="message-<%= message.id %>">
+  <p class="content"><%= message.content %></p>
+  <div class="meta">
+  <% if message.sender.tutor.nil? %>
+    <p class="sender">From: <%= message.sender.class.name %> (<%= message.sender.student.first_name%>)</p>
+  <% else  %>
+  <p class="sender">From: <%= message.sender.class.name %> (<%= message.sender.tutor.first_name%>)</p>
+  <% end %>
+    <p class="timestamp">Sent at: <%= message.created_at.strftime('%Y-%m-%d %H:%M:%S') %></p>
+  </div>
 </div>

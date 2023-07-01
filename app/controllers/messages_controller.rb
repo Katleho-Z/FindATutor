@@ -5,7 +5,10 @@ class MessagesController < ApplicationController
     @message.sender = current_user
 
     if @message.save
-      ChatChannel.broadcast_to(@chatroom, message: render_message(@message))
+      ChatroomChannel.broadcast_to(
+        @chatroom,
+        render_to_string(partial: "message", locals: { message: @message })
+      )
       head :ok
     else
       render json: { error: @message.errors.full_messages }, status: :unprocessable_entity
