@@ -1,0 +1,31 @@
+<div class="form-container">
+  <%= form_tag lessons_path, method: :post do %>
+    <div>
+      <%= label_tag :date, "Date:" %>
+      <%= date_field_tag :date, nil, required: true %>
+    </div>
+    <div>
+      <%= label_tag :time, "Time:" %>
+      <%= time_field_tag :time, nil, required: true %>
+    </div>
+    <div>
+      <%= label_tag :price, "Price (in South African Rands):" %>
+      <%= number_field_tag :price, nil, required: true, step: 0.01 %>
+    </div>
+    <div>
+      <%= label_tag :skill, "Skill:" %>
+      <%= text_field_tag :skill, nil, required: true %>
+    </div>
+    <div>
+      <%= label_tag :location, "Location:" %>
+      <%= text_field_tag :location, nil, required: true %>
+    </div>
+    <div class="notes-section">
+      <%= label_tag :notes, "Notes:" %>
+      <%= text_area_tag :notes, nil, rows: 4, required: true, class: "form-control" %>
+    </div>
+    <div class="submit-section">
+      <%= submit_tag "Submit Bid" %>
+    </div>
+  <% end %>
+</div>
