@@ -4,12 +4,6 @@ Rails.application.routes.draw do
 
   root to: "pages#home"
 
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> master
   resources :blogs
 
   resources :lessons, only: [:new, :create]
