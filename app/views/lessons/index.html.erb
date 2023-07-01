@@ -1,1 +1,24 @@
+<h1>Upcoming Sessions</h1>
 
+<table>
+  <thead>
+    <tr>
+      <th>Skills</th>
+      <th>Date</th>
+      <th>Time Lesson</th>
+      <th>Amount Offered</th>
+      <!-- Add other table headers here -->
+    </tr>
+  </thead>
+  <tbody>
+    <% @lessons.each do |lesson| %>
+      <tr>
+        <td><%= lesson.skill.name %></td>
+        <td><%= lesson.date %></td>
+        <td><%= lesson.time %></td>
+        <td><%= lesson.amount_offered %></td>
+        <!-- Add other table data here -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>

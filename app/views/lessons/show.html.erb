@@ -1,0 +1,13 @@
+
+
+<h1>Lesson</h1>
+
+<div>
+  <p><strong>Skills:</strong> <%= @lesson.skill.name %></p>
+  <p><strong>Date:</strong> <%= @lesson.date %></p>
+  <p><strong>Time Lesson:</strong> <%= @lesson.time %></p>
+  <p><strong>Amount Offered:</strong> <%= @lesson.amount_offered %></p>
+</div>
+
+
+<%= link_to 'Back', lessons_path %>

@@ -1,31 +1,27 @@
 <div class="form-container">
-  <%= form_tag lessons_path, method: :post do %>
+  <%= simple_form_for [@tutor, @lesson] do |f| %>
     <div>
-      <%= label_tag :date, "Date:" %>
-      <%= date_field_tag :date, nil, required: true %>
-    </div>
-    <div>
-      <%= label_tag :time, "Time:" %>
-      <%= time_field_tag :time, nil, required: true %>
+      <%= f.label :date, "Date:" %>
+      <%= f.input :date, as: :date, required: true %>
     </div>
     <div>
-      <%= label_tag :price, "Price (in South African Rands):" %>
-      <%= number_field_tag :price, nil, required: true, step: 0.01 %>
+      <%= f.label :time, "Time:" %>
+      <%= f.input :time, as: :time, required: true %>
     </div>
     <div>
-      <%= label_tag :skill, "Skill:" %>
-      <%= text_field_tag :skill, nil, required: true %>
+      <%= f.label :amount_offered, "Price (in South African Rands):" %>
+      <%= f.input :amount_offered, required: true, input_html: { step: 0.01 } %>
     </div>
     <div>
-      <%= label_tag :location, "Location:" %>
-      <%= text_field_tag :location, nil, required: true %>
+      <%= f.label :skill, "Skill:" %>
+      <%= f.collection_select(:skill_id, Skill.all, :id, :name) %>
     </div>
-    <div class="notes-section">
-      <%= label_tag :notes, "Notes:" %>
-      <%= text_area_tag :notes, nil, rows: 4, required: true, class: "form-control" %>
-    </div>
+    <%# <div class="notes-section">
+      <%= f.label :notes, "Notes:" %>
+      <%# <%= f.text_area :notes, rows: 4, required: false, class: "form-control" %>
+    <%# </div> %>
     <div class="submit-section">
-      <%= submit_tag "Submit Bid" %>
+      <%= f.button :submit, "Submit Bid" %>
     </div>
   <% end %>
 </div>
