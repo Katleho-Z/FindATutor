@@ -3,6 +3,7 @@ class LessonsController < ApplicationController
 
   def index
     @lessons = Lesson.all
+    @tutor = Tutor.find_by(id: params[:tutor_id])
   end
 
   def show

@@ -1,0 +1,51 @@
+.lesson-container {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .lesson-container h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .lesson-container p {
+    margin: 5px 0;
+  }
+
+  .lesson-container strong {
+    font-weight: bold;
+  }
+
+  .back-link {
+    display: block;
+    margin-top: 20px;
+  }
+
+
+
+
+
+
+
+
+  .lessons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+
+  }
+
+  .lesson {
+    margin-bottom: 20px;
+    background-color: #ebe1e1;
+  }
+
+  .lesson p {
+    margin: 5px 0;
+  }
+
+  h1 {
+    text-align: center;
+  }

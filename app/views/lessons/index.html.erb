@@ -1,24 +1,12 @@
-<h1>Upcoming Sessions</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Skills</th>
-      <th>Date</th>
-      <th>Time Lesson</th>
-      <th>Amount Offered</th>
-      <!-- Add other table headers here -->
-    </tr>
-  </thead>
-  <tbody>
-    <% @lessons.each do |lesson| %>
-      <tr>
-        <td><%= lesson.skill.name %></td>
-        <td><%= lesson.date %></td>
-        <td><%= lesson.time %></td>
-        <td><%= lesson.amount_offered %></td>
-        <!-- Add other table data here -->
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="lessons-container">
+  <% @lessons.each do |lesson| %>
+    <div class="lesson">
+      <p><strong>Skills:</strong> <%= lesson.skill.name %></p>
+      <p><strong>Date:</strong> <%= lesson.date %></p>
+      <p><strong>Time Lesson:</strong> <%= lesson.time %></p>
+      <p><strong>Amount Offered:</strong> <%= lesson.amount_offered %></p>
+      <p><strong>Tutor:</strong> <%= lesson.tutor.first_name %> <%= lesson.tutor.last_name %></p>
+      <%= link_to "Message", student_chatrooms_path(student_id: current_user.id, tutor_id: lesson.tutor_id), data: { turbo_method: :post }, class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
