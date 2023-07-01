@@ -6,4 +6,6 @@ class Skill < ApplicationRecord
   has_many :sessions
   validates :name, presence: true, uniqueness: true
 
+  has_many :blogs
+
 end

@@ -1,0 +1,22 @@
+ <div class="form-column">
+
+    <h1>New Blog Post</h1>
+
+    <%= simple_form_for @blog do |f| %>
+      <div>
+        <%= f.input :title, label: 'Title' %>
+      </div>
+
+      <div>
+        <%= f.input :content, label: 'Content', as: :text %>
+      </div>
+
+      <div>
+        <%= f.collection_select :skill_id, Skill.all, :id, :name, label: 'Skill' %>
+      </div>
+
+      <div>
+        <%= f.submit 'Create Blog Post' %>
+      </div>
+    <% end %>
+  </div>

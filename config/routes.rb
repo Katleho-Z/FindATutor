@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
+  get 'static_pages/about'
   devise_for :users
 
   root to: "pages#home"
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> master
   resources :blogs
 
   resources :lessons, only: [:new, :create]
@@ -23,5 +30,9 @@ Rails.application.routes.draw do
 
 
   # Other routes can be defined here
+
+
+  get 'about', to: 'static_pages#about'
+
 
 end

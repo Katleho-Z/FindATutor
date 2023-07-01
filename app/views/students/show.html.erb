@@ -1,0 +1,13 @@
+
+<div>
+
+  <p><strong>Name:</strong> <%= @student.first_name %> <%= @student.last_name %> </p>
+    <p><strong>Contact:</strong> <%= @student.phone_number %></p>
+
+</div>
+
+<div>
+  <%= @student.bio %>
+</div>
+
+<%= link_to 'Back', student_path %>
