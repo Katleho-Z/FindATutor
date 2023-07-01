@@ -8,6 +8,7 @@ class Tutor < ApplicationRecord
   has_many :messages
   has_many :skills, through: :tutor_skills
   has_one_attached :photo
+  has_many :blogs
 
   validates :first_name, presence: true
   validates :last_name, presence: true
