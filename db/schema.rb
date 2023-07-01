@@ -107,19 +107,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_28_084159) do
     t.index ["user_id"], name: "index_students_on_user_id"
   end
 
-  create_table "tutor_profiles", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.text "bio"
-    t.text "skills"
-    t.decimal "rating"
-    t.string "location"
-    t.bigint "student_reviews_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["student_reviews_id"], name: "index_tutor_profiles_on_student_reviews_id"
-    t.index ["user_id"], name: "index_tutor_profiles_on_user_id"
-  end
-
   create_table "tutor_reviews", force: :cascade do |t|
     t.bigint "session_id", null: false
     t.integer "rating"
@@ -178,8 +165,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_28_084159) do
   add_foreign_key "student_skills", "skills"
   add_foreign_key "student_skills", "students"
   add_foreign_key "students", "users"
-  add_foreign_key "tutor_profiles", "student_reviews", column: "student_reviews_id"
-  add_foreign_key "tutor_profiles", "users"
   add_foreign_key "tutor_reviews", "students"
   add_foreign_key "tutor_skills", "skills"
   add_foreign_key "tutor_skills", "tutors"
