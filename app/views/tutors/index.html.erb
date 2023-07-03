@@ -23,8 +23,8 @@
     <% @tutors.each do |tutor| %>
       <div class="col-md-4">
         <div class="card mb-4">
-          <% if tutor.profile_image.present? %>
-            <%= image_tag tutor.profile_image, class: "card-img-top", alt: tutor.first_name %>
+          <% if tutor.photo.attached? %>
+            <%= image_tag tutor.photo, class: "card-img-top", alt: tutor.first_name %>
           <% else %>
             <div class="placeholder-image"></div>
           <% end %>
@@ -79,8 +79,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-
