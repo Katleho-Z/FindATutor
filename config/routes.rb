@@ -27,4 +27,6 @@ Rails.application.routes.draw do
   end
   # Other routes can be defined here
   get 'about', to: 'static_pages#about'
+  mount ActionCable.server => '/cable'
+
 end
