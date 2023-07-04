@@ -137,7 +137,7 @@ student_skill2 = StudentSkill.create!(
 )
 
 # Creating Sessions
-puts "Creating sessions..."
+puts "Creating lessons..."
 lesson1 = Lesson.create!(
   tutor: tutor1,
   student: student1,
