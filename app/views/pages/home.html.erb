@@ -3,10 +3,22 @@
     <h1>Unlock Your Learning Potential With Find A Tutor</h1>
     <p>Discover the limitless possibilities of web development with Find Tutor and embark on a transformative
     journey by finding the perfect tutoring match for your web development aspirations.</p>
-     <a href="/students/new" class="btn btn-secondary">Become a Student</a>
-     <a href="/tutors/new" class="btn btn-secondary">Become a tutor</a>
+
+  <% if current_user.nil? %>
+   <%= "Current user is nil" %>
+   <a href="/students/new" class="btn btn-secondary">Become a Student</a>
+   <a href="/tutors/new" class="btn btn-secondary">Become a Tutor</a>
+<% elsif user_is_student?(current_user) %>
+   <%= "Current user is a student" %>
+   <a href="/tutors" class="btn btn-secondary">Browse Tutors</a>
+<% elsif user_is_tutor?(current_user) %>
+   <%= "Current user is a tutor" %>
+   <a href="/students" class="btn btn-secondary">Browse Students</a>
+<% end %>
+
   </div>
 </div>
+
 
 
 <%# <div class="footer-copyright">
