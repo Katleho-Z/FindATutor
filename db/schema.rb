@@ -94,13 +94,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_28_102957) do
   end
 
   create_table "student_reviews", force: :cascade do |t|
-    t.bigint "session_id", null: false
     t.integer "rating"
     t.text "comment"
     t.bigint "tutor_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["session_id"], name: "index_student_reviews_on_session_id"
     t.index ["tutor_id"], name: "index_student_reviews_on_tutor_id"
   end
 
@@ -126,14 +124,27 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_28_102957) do
     t.index ["user_id"], name: "index_students_on_user_id"
   end
 
+  create_table "tutor_profiles", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.text "bio"
+    t.text "skills"
+    t.decimal "rating"
+    t.string "location"
+    t.bigint "student_reviews_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_reviews_id"], name: "index_tutor_profiles_on_student_reviews_id"
+    t.index ["user_id"], name: "index_tutor_profiles_on_user_id"
+  end
+
   create_table "tutor_reviews", force: :cascade do |t|
-    t.bigint "session_id", null: false
+    t.bigint "lesson_id", null: false
     t.integer "rating"
     t.text "comment"
     t.bigint "student_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["session_id"], name: "index_tutor_reviews_on_session_id"
+    t.index ["lesson_id"], name: "index_tutor_reviews_on_lesson_id"
     t.index ["student_id"], name: "index_tutor_reviews_on_student_id"
   end
 
@@ -187,6 +198,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_28_102957) do
   add_foreign_key "student_skills", "skills"
   add_foreign_key "student_skills", "students"
   add_foreign_key "students", "users"
+
+  add_foreign_key "tutor_reviews", "lessons"
+
+  add_foreign_key "tutor_profiles", "student_reviews", column: "student_reviews_id"
+  add_foreign_key "tutor_profiles", "users"
+
   add_foreign_key "tutor_reviews", "students"
   add_foreign_key "tutor_skills", "skills"
   add_foreign_key "tutor_skills", "tutors"

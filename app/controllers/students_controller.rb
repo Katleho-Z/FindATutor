@@ -20,7 +20,7 @@ class StudentsController < ApplicationController
     if @student.save
       redirect_to student_path(@student), notice: 'Student was successfully created.'
     else
-      render :new, status: :uprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -47,6 +47,6 @@ class StudentsController < ApplicationController
   end
 
   def student_params
-    params.require(:student).permit(:first_name, :last_name, :photo, :user_id, :phone_number, :bio)
+    params.require(:student).permit(:first_name, :last_name, :photo, :user_id, :phone_number, :bio, :profile_image)
   end
 end

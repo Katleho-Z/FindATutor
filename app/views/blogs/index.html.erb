@@ -1,14 +1,13 @@
 <div class="form-column">
+  <h1>Blog Posts</h1>
 
-<h1>Blog Posts</h1>
+  <% @blogs.each do |blog| %>
+    <div class="blog-post">
+      <h2 class="blog-title"><%= blog.title %></h2>
+      <p class="blog-content"><%= truncate(blog.content, length: 150) %></p>
+      <p class="blog-details"><strong>Author:</strong> <%= blog.tutor.first_name %> | <strong>Skill:</strong> <%= blog.skill.name %> <%= link_to "Read", blog_path(blog), class: "btn btn-primary read-more-btn" %></p>
+    </div>
 
-<% @blogs.each do |blog| %>
-  <div>
-    <h2><%= blog.title %></h2>
-    <p><%= truncate(blog.content, length: 150) %></p>
-    <p><strong>Author:</strong> <%= blog.tutor.first_name %></p>
-    <p><strong>Skill:</strong> <%= blog.skill.name %></p>
-    <%= link_to "Read More", blog_path(blog), class: "btn btn-primary" %>
-  </div>
-<% end %>
+    <p> Are you a tutor, and you would like to post your own blog and share your expertise? <a href="/blogs/new" class="btn btn-primary">Post Your Blog</a> </p>
+  <% end %>
 </div>

@@ -12,6 +12,9 @@
     <div class="tutor-show-reviews">
       <p>Reviews</p>
       <p>4.5</p>
+      <h3>Bio</h3>
+      <p><%= @tutor.bio %></p>
+
     </div>
 
     <%= link_to "Request Lesson", new_tutor_lesson_path(@tutor), class: "btn btn-primary" %>
@@ -20,8 +23,5 @@
     
 
   </div>
-  <div class="tutor-show-bio">
-    <h3>Bio</h3>
-    <p><%= @tutor.bio %></p>
-  </div>
+
 </div>
