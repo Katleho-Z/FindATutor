@@ -5,7 +5,8 @@
     <div class="message">
       <p class="content"><%= message.content %></p>
       <div class="meta">
-        <p class="sender">From: <%= message.sender.class.name %> (<%= message.sender.full_name %>)</p>
+        <p class="sender">From: <%= message.sender.class.name %> (<%= message.sender.email %>)</p>
+
         <p class="timestamp">Sent at: <%= message.created_at.strftime('%Y-%m-%d %H:%M:%S') %></p>
       </div>
     </div>

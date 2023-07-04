@@ -8,7 +8,7 @@ class CreateLessons < ActiveRecord::Migration[7.0]
       t.float :amount_offered
       t.string :status
       t.references :skill, null: false, foreign_key: true
-      t.references :tutor_reviews, null: false, foreign_key: true
+
       t.timestamps
     end
   end

@@ -1,0 +1,10 @@
+<div class="lesson-container">
+  <h1>Lesson</h1>
+  <p><strong>Skills:</strong> <%= @lesson.skill.name %></p>
+  <p><strong>Date:</strong> <%= @lesson.date %></p>
+  <p><strong>Time Lesson:</strong> <%= @lesson.time %></p>
+  <p><strong>Amount Offered:</strong> <%= @lesson.amount_offered %></p>
+  <p><strong>Tutor:</strong> <%= @lesson.tutor.first_name %> <%= @lesson.tutor.last_name %></p>
+</div>
+
+<%= link_to 'Back', lessons_path, class: 'back-link' %>

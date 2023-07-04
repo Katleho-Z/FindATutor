@@ -3,6 +3,7 @@ class LessonsController < ApplicationController
 
   def index
     @lessons = Lesson.all
+    @tutor = Tutor.find_by(id: params[:tutor_id])
   end
 
   def show
@@ -10,12 +11,16 @@ class LessonsController < ApplicationController
 
   def new
     @lesson = Lesson.new
+    @tutor = Tutor.find(params[:tutor_id])
   end
 
   def create
     @lesson = Lesson.new(lesson_params)
-    if @lesson.save
-      redirect_to @lesson, notice: 'Lesson was successfully created.'
+    @tutor = Tutor.find(params[:tutor_id])
+    @lesson.tutor = @tutor
+    @lesson.student = current_user.student
+    if @lesson.save!
+      redirect_to lesson_path(@lesson), notice: 'Lesson was successfully created.'
     else
       render :new
     end
@@ -44,7 +49,6 @@ class LessonsController < ApplicationController
   end
 
   def lesson_params
-    params.require(:lesson).permit(:tutor_id, :student_id, :date, :time, :amount_offered, :status, :skill_id)
+    params.require(:lesson).permit(:location, :notes, :tutor_id, :student_id, :date, :time, :amount_offered, :status, :skill_id)
   end
 end
-
