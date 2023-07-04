@@ -43,7 +43,10 @@
     messageForm.addEventListener('submit', function(event) {
       event.preventDefault();
       const content = event.target.querySelector('input[type="text"]').value;
-      App.chat.receive({ message: content });
+
+      // Use the perform function to send data to the server
+      App.chat.perform('speak', { message: content });
+
       event.target.reset();
     });
   });
