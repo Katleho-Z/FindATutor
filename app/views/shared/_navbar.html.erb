@@ -8,13 +8,10 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto">
-<%= user_signed_in? %>
-
-
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav">
         <% if user_signed_in? %>
-          <li class="nav-item active">
+          <li class="nav-item">
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
@@ -23,11 +20,9 @@
           <li class="nav-item">
             <%= link_to "Blog", blogs_path, class: "nav-link" %>
           </li>
-
-            <li class="nav-item">
-              <%= link_to 'About Us', about_path, class: "nav-link" %>
-           </li>
-
+          <li class="nav-item">
+            <%= link_to 'About Us', about_path, class: "nav-link" %>
+          </li>
           <li class="nav-item dropdown">
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <%= image_tag "https://mir-s3-cdn-cf.behance.net/user/276/8a4956142799115.5e5360d08a367.jpg", class: "avatar", alt: "dropdown menu" %>
@@ -41,13 +36,11 @@
         <% else %>
           <li class="nav-item">
             <%= link_to 'About Us', about_path, class: "nav-link" %>
-         </li>
+          </li>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>
         <% end %>
-
-
       </ul>
     </div>
   </div>

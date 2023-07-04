@@ -1,5 +1,6 @@
-<div class="form-column">
   <h1>Blog Posts</h1>
+<%= link_to "Create Your Own Blog", new_blog_path, class: "btn" %> </p>
+
 
   <% @blogs.each do |blog| %>
     <div class="blog-post">
@@ -9,4 +10,3 @@
     </div>
 
   <% end %>
-</div>
