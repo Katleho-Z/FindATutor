@@ -1,12 +1,11 @@
-<h1><%= @blog.title %></h1>
-
-<div>
-  <p><strong>Author:</strong> <%= @blog.tutor.first_name %></p>
-  <p><strong>Skill:</strong> <%= @blog.skill.name %></p>
+<div class="blog-details">
+  <h2 class="blog-title"><%= @blog.title %></h2>
+  <p class="blog-info"><strong>Author:</strong> <%= @blog.tutor.first_name %></p>
+  <p class="blog-info"><strong>Skill:</strong> <%= @blog.skill.name %></p>
 </div>
 
-<div>
+<div class="blog-content">
   <%= @blog.content %>
 </div>
 
-<%= link_to 'Back', blogs_path %>
+<%= link_to 'Back', blogs_path, class: "btn btn-primary" %>
