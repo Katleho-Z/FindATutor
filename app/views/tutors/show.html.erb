@@ -16,8 +16,10 @@
       <p><%= @tutor.bio %></p>
 
     </div>
-    <%= link_to "Message", "#", class: "btn btn-primary" %>
+
+    <%= link_to "Message", student_chatrooms_path(student_id: current_user.id, tutor_id: @tutor.id), data: {turbo_method: :post}, class: "btn btn-primary" %>
     <%= link_to "Request Lesson", new_lesson_path, class: "btn btn-primary" %>
+
   </div>
 
 </div>

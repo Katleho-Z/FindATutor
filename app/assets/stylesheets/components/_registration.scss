@@ -33,7 +33,44 @@ a {
 h1 {
   font-size: 28px;
   margin-bottom: 10px;
-  color: #ffffff;
+  color: black;
+}
+
+#chatroom {
+  background-color: rgb(255, 184, 5);
+  padding: 10px;
+}
+
+.message {
+  background-color: black;
+  color: rgb(255, 184, 5);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.message p {
+  margin: 0;
+}
+
+#message-form input[type="text"] {
+  // background-color: rgb(121, 112, 90);
+  color: black;
+  padding: 5px;
+}
+
+#message-form input[type="submit"] {
+  background-color: rgb(255, 184, 5);
+  color: black;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.notice {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  margin-bottom: 20px;
 }
 
 h3, h4 {
