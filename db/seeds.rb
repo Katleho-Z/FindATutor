@@ -87,32 +87,32 @@ music_skill = Skill.create!(name: "Music")
 # Create Tutors
 puts "Creating tutors..."
 tutor2 = Tutor.create!(
-  first_name: "Eti",
-  last_name: "Nkanga",
+  first_name: "Sarah",
+  last_name: "Thompson",
   profile_image: "https://avatars.githubusercontent.com/u/79476804?v=4",
   availability: "Monday, Wednesday, Friday",
   location: "Cape Town",
-  email_address: "eti@example.com",
+  email_address: "sarah@example.com",
   bio: "Experienced tutor with a passion for Photography.",
   user: user1
 )
 
-file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+file = URI.open("https://res.cloudinary.com/daewg6dpy/image/upload/v1688589363/tutors_2_uf3khr.jpg")
 tutor2.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
 tutor2.save
 
 tutor3 = Tutor.create!(
-  first_name: "Mzi",
-  last_name: "Mthethwa",
+  first_name: "Michael",
+  last_name: "Roberts",
   profile_image: "mzi.jpg",
   availability: "Monday, Wednesday, Friday",
   location: "Cape Town",
-  email_address: "mzi@example.com",
+  email_address: "michael@example.com",
   bio: "Experienced tutor with a passion on teaching.",
   user: user2
 )
 
-file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+file = URI.open("https://res.cloudinary.com/daewg6dpy/image/upload/v1688589360/tutors_3_tj9otg.jpg")
 tutor3.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
 tutor3.save
 
@@ -127,7 +127,7 @@ tutor4 = Tutor.create!(
   user: user3
 )
 
-file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+file = URI.open("https://res.cloudinary.com/daewg6dpy/image/upload/v1688589347/tutors_9_ozxvyn.jpg")
 tutor4.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
 tutor4.save
 
@@ -142,13 +142,13 @@ tutor5 = Tutor.create!(
   user: user4
 )
 
-file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+file = URI.open("https://res.cloudinary.com/daewg6dpy/image/upload/v1688589337/tutors_5_qmwgia.jpg")
 tutor5.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
 tutor5.save
 
 tutor6 = Tutor.create!(
-  first_name: "Lisa",
-  last_name: "Brown",
+  first_name: "Olivia",
+  last_name: "Johnson",
   profile_image: "https://avatars.githubusercontent.com/u/79476809?v=4",
   availability: "Monday, Wednesday, Friday",
   location: "Pretoria",
@@ -157,7 +157,7 @@ tutor6 = Tutor.create!(
   user: user5
 )
 
-file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+file = URI.open("https://res.cloudinary.com/daewg6dpy/image/upload/v1688589345/tutors_7_owlozz.jpg")
 tutor6.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
 tutor6.save
 
@@ -172,22 +172,22 @@ tutor7 = Tutor.create!(
   user: user6
 )
 
-file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+file = URI.open("https://res.cloudinary.com/daewg6dpy/image/upload/v1688589322/tutors_10_cntvad.jpg")
 tutor7.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
 tutor7.save
 
 tutor8 = Tutor.create!(
-  first_name: "Ann",
-  last_name: "Taylor",
+  first_name: "James",
+  last_name: "Johnson",
   profile_image: "https://avatars.githubusercontent.com/u/79476811?v=4",
   availability: "Monday, Wednesday, Friday",
   location: "Bloemfontein",
-  email_address: "ann@example.com",
+  email_address: "john@example.com",
   bio: "Experienced tutor with a passion for Physics.",
   user: user7
 )
 
-file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+file = URI.open("https://res.cloudinary.com/daewg6dpy/image/upload/v1688589324/tutors_4_bpo7yp.jpg")
 tutor8.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
 tutor8.save
 
@@ -202,7 +202,7 @@ tutor9 = Tutor.create!(
   user: user8
 )
 
-file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+file = URI.open("https://res.cloudinary.com/daewg6dpy/image/upload/v1688589318/tutors_8_e252ah.jpg")
 tutor9.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
 tutor9.save
 
@@ -217,7 +217,7 @@ tutor10 = Tutor.create!(
   user: user9
 )
 
-file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+file = URI.open("https://res.cloudinary.com/daewg6dpy/image/upload/v1688589337/tutors_5_qmwgia.jpg")
 tutor10.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
 tutor10.save
 
@@ -232,7 +232,7 @@ tutor11 = Tutor.create!(
   user: user10
 )
 
-file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+file = URI.open("https://res.cloudinary.com/daewg6dpy/image/upload/v1688589329/tutors_6_f76gaw.jpg")
 tutor11.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
 tutor11.save
 
