@@ -269,54 +269,54 @@ tutor11.save
 # Create Students
 puts "Creating students..."
 student1 = Student.create!(
-  first_name: "Kat",
-  last_name: "Zonke",
+  first_name: "Samuel",
+  last_name: "Turner",
   profile_image: "kat.jpg",
   phone_number: 1234567890,
   bio: "A motivated student eager to learn.",
   user: user11
 )
 
-file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+file = URI.open("https://res.cloudinary.com/daewg6dpy/image/upload/v1688589335/students_6_vvodgw.jpg")
 student1.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
 student1.save
 
 student2 = Student.create!(
-  first_name: "Alex",
-  last_name: "April",
+  first_name: "Isabella",
+  last_name: "Davis",
   profile_image: "alex.jpg",
   phone_number: 1234567890,
   bio: "A motivated student eager to learn.",
   user: user12
 )
 
-file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+file = URI.open("https://res.cloudinary.com/daewg6dpy/image/upload/v1688589340/students_8_nl118r.jpg")
 student2.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
 student2.save
 
 student3 = Student.create!(
-  first_name: "Ivy",
-  last_name: "Thomas",
+  first_name: "Ethan",
+  last_name: "Harris",
   profile_image: "ivy.jpg",
   phone_number: 1234567890,
   bio: "Eager to learn about biology and life science.",
   user: user13
 )
 
-file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+file = URI.open("https://res.cloudinary.com/daewg6dpy/image/upload/v1688589340/students_7_vuik8t.jpg")
 student3.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
 student3.save
 
 student4 = Student.create!(
-  first_name: "Ada",
-  last_name: "Jackson",
+  first_name: "Elizbeth",
+  last_name: "Brown",
   profile_image: "ada.jpg",
   phone_number: 1234567890,
   bio: "Interested in studying geology and Earth's structure.",
   user: user14
 )
 
-file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+file = URI.open("https://res.cloudinary.com/daewg6dpy/image/upload/v1688589346/students_2_alrefm.jpg")
 student4.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
 student4.save
 
@@ -329,12 +329,12 @@ student5 = Student.create!(
   user: user15
 )
 
-file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+file = URI.open("https://res.cloudinary.com/daewg6dpy/image/upload/v1688589342/students_9_mfec68.jpg")
 student5.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
 student5.save
 
 student6 = Student.create!(
-  first_name: "Joy",
+  first_name: "Jayson",
   last_name: "Harris",
   profile_image: "joy.jpg",
   phone_number: 1234567890,
@@ -342,7 +342,7 @@ student6 = Student.create!(
   user: user16
 )
 
-file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+file = URI.open("https://res.cloudinary.com/daewg6dpy/image/upload/v1688589351/students_1_eqq3ls.jpg")
 student6.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
 student6.save
 
@@ -355,20 +355,20 @@ student7 = Student.create!(
   user: user15
 )
 
-file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+file = URI.open("https://res.cloudinary.com/daewg6dpy/image/upload/v1688591446/students_4_xherw5.jpg")
 student7.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
 student7.save
 
 student8 = Student.create!(
-  first_name: "Lucy",
-  last_name: "Brown",
+  first_name: "David",
+  last_name: "James",
   profile_image: "lucy.jpg",
   phone_number: 1234567890,
   bio: "Eager to understand the world of literature.",
   user: user16
 )
 
-file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+file = URI.open("https://res.cloudinary.com/daewg6dpy/image/upload/v1688591456/students_1_w3ckjt.jpg")
 student8.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
 student8.save
 
@@ -381,12 +381,12 @@ student9 = Student.create!(
   user: user17
 )
 
-file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+file = URI.open("https://res.cloudinary.com/daewg6dpy/image/upload/v1688591444/students_3_sfhiz7.jpg")
 student9.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
 student9.save
 
 student10 = Student.create!(
-  first_name: "Emma",
+  first_name: "John",
   last_name: "Miller",
   profile_image: "emma.jpg",
   phone_number: 1234567890,
@@ -394,12 +394,12 @@ student10 = Student.create!(
   user: user18
 )
 
-file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+file = URI.open("https://res.cloudinary.com/daewg6dpy/image/upload/v1688591439/students_2_udzwg2.jpg")
 student10.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
 student10.save
 
 student11 = Student.create!(
-  first_name: "Mark",
+  first_name: "Mandy",
   last_name: "Wilson",
   profile_image: "mark.jpg",
   phone_number: 1234567890,
@@ -407,12 +407,12 @@ student11 = Student.create!(
   user: user19
 )
 
-file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+file = URI.open("https://res.cloudinary.com/daewg6dpy/image/upload/v1688591891/pexels-polinach-17356899_cuwk7k.jpg")
 student11.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
 student11.save
 
 student12 = Student.create!(
-  first_name: "Jane",
+  first_name: "Lane",
   last_name: "Moore",
   profile_image: "jane.jpg",
   phone_number: 1234567890,
@@ -420,7 +420,7 @@ student12 = Student.create!(
   user: user20
 )
 
-file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+file = URI.open("https://res.cloudinary.com/daewg6dpy/image/upload/v1688591733/pexels-daniel-xavier-1239291_azisw9.jpg")
 student12.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
 student12.save
 
