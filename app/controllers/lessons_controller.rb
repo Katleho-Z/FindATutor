@@ -4,6 +4,9 @@ class LessonsController < ApplicationController
   def index
     @lessons = Lesson.all
     @tutor = Tutor.find_by(id: params[:tutor_id])
+    @pending_lessons = Lesson.where(status: 'Pending')
+    @confirmed_lessons = Lesson.where(status: 'Confirmed')
+    @rejected_lessons = Lesson.where(status: 'Rejected')
   end
 
   def show

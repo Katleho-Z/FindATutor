@@ -493,3 +493,15 @@ lesson2 = Lesson.create!(
   status: "Confirmed",
   skill: painting_skill
 )
+
+10.times do |i|
+  Lesson.create!(
+    tutor: Tutor.all.sample,
+    student: Student.all.sample,
+    date: Faker::Date.between(from: 2.days.ago, to: Date.today),
+    time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
+    amount_offered: Faker::Number.decimal(l_digits: 2),
+    status: ["Pending", "Confirmed", "Rejected"].sample,
+    skill: Skill.all.sample
+  )
+end
