@@ -3,8 +3,8 @@
     <% @students.each do |student| %>
       <div class="col-md-4">
         <div class="card mb-4">
-          <% if student.profile_image.present? %>
-            <%= image_tag student.profile_image, class: "card-img-top", alt: student.first_name %>
+          <% if student.photo.attached? %>
+            <%= cl_image_tag student.photo.key, class: "card-img-top", alt: student.first_name %>
           <% else %>
             <div class="placeholder-image"></div>
           <% end %>

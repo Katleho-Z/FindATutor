@@ -1,10 +1,10 @@
 <div class="container text-center">
   <div class="student-profile">
-    <% if @student.profile_image.present? %>
-      <%= image_tag @student.profile_image, class: "profile-picture img-fluid rounded-circle" %>
-    <% else %>
-      <%= image_tag "default_profile_picture.jpg", class: "profile-picture img-fluid rounded-circle" %>
-    <% end %>
+    <% if @student.photo.key? %>
+      <%= cl_image_tag @student.photo.key, class: "profile-picture img-fluid rounded-circle" %>
+      <% else %>
+        <%= image_tag "eti.jpg", class: "profile-picture img-fluid rounded-circle" %>
+      <% end %>
     <h2><%= @student.first_name %> <%= @student.last_name %></h2>
     <div class="student-details">
       <p><strong>Contact:</strong> <%= @student.phone_number %></p>
