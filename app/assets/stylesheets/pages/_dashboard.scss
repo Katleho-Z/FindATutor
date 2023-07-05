@@ -1,0 +1,39 @@
+.pills-container {
+  background: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.nav-pills .nav-link {
+  border-radius: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #060606;
+  color: white;
+}
+
+.btn-dash {
+  color: #333;
+  background-color: transparent;
+  border: none;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn-dash.active {
+  color: #fff;
+  background-color: #00ff55;
+}
+
+.btn-dash:not(.active):hover {
+  color: #007bff;
+}
+
+.tab-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}

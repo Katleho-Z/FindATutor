@@ -1,20 +1,24 @@
-<div class="row row-cols-1 row-cols-md-3 g-4">
-  <% @lessons.each do |lesson| %>
-    <div class="col">
-      <div class="card h-100 shadow-sm">
-        <div class="card-body">
-          <h5 class="card-title"><%= lesson.skill.name %></h5>
-          <p class="card-text">
-            <strong>Date:</strong> <%= lesson.date %><br>
-            <strong>Time:</strong> <%= lesson.time %><br>
-            <strong>Amount Offered:</strong> <%= lesson.amount_offered %><br>
-            <strong>Tutor:</strong> <%= lesson.tutor.first_name %> <%= lesson.tutor.last_name %>
-          </p>
-        </div>
-        <div class="card-footer">
-          <%= link_to "Message", student_chatrooms_path(student_id: current_user.id, tutor_id: lesson.tutor_id), data: { turbo_method: :post }, class: "btn btn-primary" %>
-        </div>
-      </div>
+<div class="p-3 m3 pills-container">
+  <ul class="nav nav-pills mt-4" id="myTab" role="tablist">
+    <li class="nav-item " role="presentation">
+      <button class="btn-dash active" id="pending-tab" data-bs-toggle="pill" data-bs-target="#pending-tab-pane" type="button" role="tab" aria-controls="pending-tab-pane" aria-selected="true">Pending</button>
+    </li>
+    <li class="nav-item " role="presentation">
+      <button class="btn-dash" id="confirmed-tab" data-bs-toggle="pill" data-bs-target="#confirmed-tab-pane" type="button" role="tab" aria-controls="confirmed-tab-pane" aria-selected="false">Confirmed</button>
+    </li>
+    <li class="nav-item " role="presentation">
+      <button class="btn-dash " id="rejected-tab" data-bs-toggle="pill" data-bs-target="#rejected-tab-pane" type="button" role="tab" aria-controls="rejected-tab-pane" aria-selected="false">Rejected</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="pending-tab-pane" role="tabpanel" aria-labelledby="pending-tab" tabindex="0">
+      <%= render 'lessons/lessons_card', lessons: @pending_lessons %>
     </div>
-  <% end %>
+    <div class="tab-pane fade" id="confirmed-tab-pane" role="tabpanel" aria-labelledby="confirmed-tab" tabindex="0">
+      <%= render 'lessons/lessons_card', lessons: @confirmed_lessons %>
+    </div>
+    <div class="tab-pane fade" id="rejected-tab-pane" role="tabpanel" aria-labelledby="rejected-tab" tabindex="0">
+      <%= render 'lessons/lessons_card', lessons: @rejected_lessons %>
+    </div>
+  </div>
 </div>
