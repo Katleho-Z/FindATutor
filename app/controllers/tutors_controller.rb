@@ -4,6 +4,8 @@ class TutorsController < ApplicationController
   def index
     if params[:query].present?
       @tutors = Tutor.search_by_name(params[:query])
+    elsif params[:location].present?
+      @tutors = Tutor.where(location: params[:location])
     else
       @tutors = Tutor.all
     end

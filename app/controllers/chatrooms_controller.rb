@@ -10,7 +10,7 @@ class ChatroomsController < ApplicationController
   def create
     @student = current_user.student
     @tutor = Tutor.find(params[:tutor_id])
-    @chatroom = Chatroom.find_by(student: @student, tutor: @tutor)
+    @chatroom = Chatroom.find_or_create_by(student: @student, tutor: @tutor)
 
     unless @chatroom
       @chatroom = Chatroom.new
@@ -21,7 +21,7 @@ class ChatroomsController < ApplicationController
     if @chatroom.save
       redirect_to @chatroom
     end
-
+    # render :new
     # redirect_to chatroom_path(@chatroom)
   end
 end
