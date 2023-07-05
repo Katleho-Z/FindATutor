@@ -53,29 +53,43 @@
   <div class="spacer"></div>
 
   <h4>Find Tutor by Location</h4>
+
+
   <div class="cards">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://img.sixt.com/1600/Cape_Town_%7C_in_TYPO_cape-town-city-content.jpg)">
-      Johannesburg
-    </div>
+    <%= link_to tutors_path(location: "Johannesburg") do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://img.sixt.com/1600/Cape_Town_%7C_in_TYPO_cape-town-city-content.jpg)">
+        Johannesburg
+      </div>
+    <% end %>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.sa-venues.com/attractionskzn/gallery/greaterdurban/1b.jpg)">
-      Durban
-    </div>
+    <%= link_to tutors_path(location: "Durban") do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.sa-venues.com/attractionskzn/gallery/greaterdurban/1b.jpg)">
+        Durban
+      </div>
+    <% end %>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Aerial_View_of_Sea_Point%2C_Cape_Town_South_Africa.jpg/1200px-Aerial_View_of_Sea_Point%2C_Cape_Town_South_Africa.jpg)">
-      Cape Town
-    </div>
+    <%= link_to tutors_path(location: "Cape Town") do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Aerial_View_of_Sea_Point%2C_Cape_Town_South_Africa.jpg/1200px-Aerial_View_of_Sea_Point%2C_Cape_Town_South_Africa.jpg)">
+        Cape Town
+      </div>
+    <% end %>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://lp-cms-production.imgix.net/2019-06/478157521_full.jpg)">
-      Port Elizabeth
-    </div>
+    <%= link_to tutors_path(location: "Port Elizabeth") do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://lp-cms-production.imgix.net/2019-06/478157521_full.jpg)">
+        Port Elizabeth
+      </div>
+    <% end %>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://interestingfacts.co.za/wp-content/uploads/2022/09/Polokwane.jpg)">
-      Polokwane
-    </div>
+    <%= link_to tutors_path(location: "Pretoria") do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://interestingfacts.co.za/wp-content/uploads/2022/09/Polokwane.jpg)">
+        Polokwane
+      </div>
+    <% end %>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://upload.wikimedia.org/wikipedia/commons/f/f4/Stellenbosch_University.jpg)">
-      Stellenbosch
-    </div>
+    <%= link_to tutors_path(location: "Bloemfontein") do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://upload.wikimedia.org/wikipedia/commons/f/f4/Stellenbosch_University.jpg)">
+        Stellenbosch
+      </div>
+    <% end %>
   </div>
 </div>

@@ -23,6 +23,23 @@ user1 = User.create!(email: "eti@example.com", password: "password1")
 user2 = User.create!(email: "mzi@example.com", password: "password2")
 user3 = User.create!(email: "kat@example.com", password: "password3")
 user4 = User.create!(email: "alex@example.com", password: "password4")
+user5 = User.create!(email: "ben@example.com", password: "password5")
+user6 = User.create!(email: "sue@example.com", password: "password6")
+user7 = User.create!(email: "lisa@example.com", password: "password7")
+user8 = User.create!(email: "bob@example.com", password: "password8")
+user9 = User.create!(email: "ann@example.com", password: "password9")
+user10 = User.create!(email: "ken@example.com", password: "password10")
+user11 = User.create!(email: "ivy@example.com", password: "password11")
+user12 = User.create!(email: "ada@example.com", password: "password12")
+user13 = User.create!(email: "tom@example.com", password: "password13")
+user14 = User.create!(email: "joy@example.com", password: "password14")
+user15 = User.create!(email: "matt@example.com", password: "password15")
+user16 = User.create!(email: "lucy@example.com", password: "password16")
+user17 = User.create!(email: "paul@example.com", password: "password17")
+user18 = User.create!(email: "emma@example.com", password: "password18")
+user19 = User.create!(email: "mark@example.com", password: "password19")
+user20 = User.create!(email: "jane@example.com", password: "password20")
+
 # ...
 
 # Create skills
@@ -56,9 +73,20 @@ biology_skill = Skill.create!(
 )
 puts "bio"
 
+puts "Creating skills..."
+chemistry_skill = Skill.create!(name: "Chemistry")
+physics_skill = Skill.create!(name: "Physics")
+computer_science_skill = Skill.create!(name: "Computer Science")
+art_skill = Skill.create!(name: "Art")
+history_skill = Skill.create!(name: "History")
+geography_skill = Skill.create!(name: "Geography")
+music_skill = Skill.create!(name: "Music")
+
+
+
 # Create Tutors
 puts "Creating tutors..."
-tutor1 = Tutor.create!(
+tutor2 = Tutor.create!(
   first_name: "Eti",
   last_name: "Nkanga",
   profile_image: "https://avatars.githubusercontent.com/u/79476804?v=4",
@@ -70,10 +98,10 @@ tutor1 = Tutor.create!(
 )
 
 file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
-tutor1.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
-tutor1.save
+tutor2.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
+tutor2.save
 
-tutor2 = Tutor.create!(
+tutor3 = Tutor.create!(
   first_name: "Mzi",
   last_name: "Mthethwa",
   profile_image: "mzi.jpg",
@@ -85,8 +113,158 @@ tutor2 = Tutor.create!(
 )
 
 file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
-tutor2.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
-tutor2.save
+tutor3.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
+tutor3.save
+
+tutor4 = Tutor.create!(
+  first_name: "Ben",
+  last_name: "Johnson",
+  profile_image: "https://avatars.githubusercontent.com/u/79476807?v=4",
+  availability: "Monday, Wednesday, Friday",
+  location: "Cape Town",
+  email_address: "ben@example.com",
+  bio: "Experienced tutor with a passion for Computer Science.",
+  user: user3
+)
+
+file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+tutor4.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
+tutor4.save
+
+tutor5 = Tutor.create!(
+  first_name: "Sue",
+  last_name: "Smith",
+  profile_image: "https://avatars.githubusercontent.com/u/79476808?v=4",
+  availability: "Tuesday, Thursday",
+  location: "Johannesburg",
+  email_address: "sue@example.com",
+  bio: "Experienced tutor with a passion for English Literature.",
+  user: user4
+)
+
+file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+tutor5.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
+tutor5.save
+
+tutor6 = Tutor.create!(
+  first_name: "Lisa",
+  last_name: "Brown",
+  profile_image: "https://avatars.githubusercontent.com/u/79476809?v=4",
+  availability: "Monday, Wednesday, Friday",
+  location: "Pretoria",
+  email_address: "lisa@example.com",
+  bio: "Experienced tutor with a passion for Music.",
+  user: user5
+)
+
+file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+tutor6.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
+tutor6.save
+
+tutor7 = Tutor.create!(
+  first_name: "Bob",
+  last_name: "Williams",
+  profile_image: "https://avatars.githubusercontent.com/u/79476810?v=4",
+  availability: "Tuesday, Thursday, Saturday",
+  location: "Durban",
+  email_address: "bob@example.com",
+  bio: "Experienced tutor with a passion for Art History.",
+  user: user6
+)
+
+file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+tutor7.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
+tutor7.save
+
+tutor8 = Tutor.create!(
+  first_name: "Ann",
+  last_name: "Taylor",
+  profile_image: "https://avatars.githubusercontent.com/u/79476811?v=4",
+  availability: "Monday, Wednesday, Friday",
+  location: "Bloemfontein",
+  email_address: "ann@example.com",
+  bio: "Experienced tutor with a passion for Physics.",
+  user: user7
+)
+
+file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+tutor8.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
+tutor8.save
+
+tutor9 = Tutor.create!(
+  first_name: "Ken",
+  last_name: "Anderson",
+  profile_image: "https://avatars.githubusercontent.com/u/79476812?v=4",
+  availability: "Tuesday, Thursday",
+  location: "Port Elizabeth",
+  email_address: "ken@example.com",
+  bio: "Experienced tutor with a passion for Chemistry.",
+  user: user8
+)
+
+file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+tutor9.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
+tutor9.save
+
+tutor10 = Tutor.create!(
+  first_name: "Ivy",
+  last_name: "Thomas",
+  profile_image: "https://avatars.githubusercontent.com/u/79476813?v=4",
+  availability: "Monday, Wednesday, Friday",
+  location: "Nelspruit",
+  email_address: "ivy@example.com",
+  bio: "Experienced tutor with a passion for Biology.",
+  user: user9
+)
+
+file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+tutor10.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
+tutor10.save
+
+tutor11 = Tutor.create!(
+  first_name: "Ada",
+  last_name: "Jackson",
+  profile_image: "https://avatars.githubusercontent.com/u/79476814?v=4",
+  availability: "Tuesday, Thursday, Saturday",
+  location: "Kimberley",
+  email_address: "ada@example.com",
+  bio: "Experienced tutor with a passion for Geology.",
+  user: user10
+)
+
+file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+tutor11.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
+tutor11.save
+
+# tutor12 = Tutor.create!(
+#   first_name: "Tom",
+#   last_name: "White",
+#   profile_image: "https://avatars.githubusercontent.com/u/79476815?v=4",
+#   availability: "Monday, Wednesday, Friday",
+#   location: "Polokwane",
+#   email_address: "tom@example.com",
+#   bio: "Experienced tutor with a passion for Astronomy.",
+#   user: user13
+# )
+
+# file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+# tutor12.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
+# tutor12.save
+
+# tutor13 = Tutor.create!(
+#   first_name: "Joy",
+#   last_name: "Harris",
+#   profile_image: "https://avatars.githubusercontent.com/u/79476816?v=4",
+#   availability: "Tuesday, Thursday",
+#   location: "Rustenburg",
+#   email_address: "joy@example.com",
+#   bio: "Experienced tutor with a passion for Sociology.",
+#   user: user14
+# )
+
+# file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+# tutor13.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
+# tutor13.save
 
 # Create Students
 puts "Creating students..."
@@ -96,8 +274,12 @@ student1 = Student.create!(
   profile_image: "kat.jpg",
   phone_number: 1234567890,
   bio: "A motivated student eager to learn.",
-  user: user3
+  user: user11
 )
+
+file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+student1.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
+student1.save
 
 student2 = Student.create!(
   first_name: "Alex",
@@ -105,41 +287,195 @@ student2 = Student.create!(
   profile_image: "alex.jpg",
   phone_number: 1234567890,
   bio: "A motivated student eager to learn.",
-  user: user4
+  user: user12
 )
+
+file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+student2.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
+student2.save
+
+student3 = Student.create!(
+  first_name: "Ivy",
+  last_name: "Thomas",
+  profile_image: "ivy.jpg",
+  phone_number: 1234567890,
+  bio: "Eager to learn about biology and life science.",
+  user: user13
+)
+
+file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+student3.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
+student3.save
+
+student4 = Student.create!(
+  first_name: "Ada",
+  last_name: "Jackson",
+  profile_image: "ada.jpg",
+  phone_number: 1234567890,
+  bio: "Interested in studying geology and Earth's structure.",
+  user: user14
+)
+
+file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+student4.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
+student4.save
+
+student5 = Student.create!(
+  first_name: "Tom",
+  last_name: "White",
+  profile_image: "tom.jpg",
+  phone_number: 1234567890,
+  bio: "Ready to explore the mysteries of astronomy.",
+  user: user15
+)
+
+file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+student5.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
+student5.save
+
+student6 = Student.create!(
+  first_name: "Joy",
+  last_name: "Harris",
+  profile_image: "joy.jpg",
+  phone_number: 1234567890,
+  bio: "Passionate about understanding the intricacies of sociology.",
+  user: user16
+)
+
+file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+student6.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
+student6.save
+
+student7 = Student.create!(
+  first_name: "Matt",
+  last_name: "Johnson",
+  profile_image: "matt.jpg",
+  phone_number: 1234567890,
+  bio: "Interested in learning about computer science.",
+  user: user15
+)
+
+file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+student7.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
+student7.save
+
+student8 = Student.create!(
+  first_name: "Lucy",
+  last_name: "Brown",
+  profile_image: "lucy.jpg",
+  phone_number: 1234567890,
+  bio: "Eager to understand the world of literature.",
+  user: user16
+)
+
+file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+student8.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
+student8.save
+
+student9 = Student.create!(
+  first_name: "Paul",
+  last_name: "Davis",
+  profile_image: "paul.jpg",
+  phone_number: 1234567890,
+  bio: "Keen on exploring music theory.",
+  user: user17
+)
+
+file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+student9.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
+student9.save
+
+student10 = Student.create!(
+  first_name: "Emma",
+  last_name: "Miller",
+  profile_image: "emma.jpg",
+  phone_number: 1234567890,
+  bio: "Ready to delve into art history.",
+  user: user18
+)
+
+file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+student10.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
+student10.save
+
+student11 = Student.create!(
+  first_name: "Mark",
+  last_name: "Wilson",
+  profile_image: "mark.jpg",
+  phone_number: 1234567890,
+  bio: "Excited to learn about physics and its applications.",
+  user: user19
+)
+
+file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+student11.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
+student11.save
+
+student12 = Student.create!(
+  first_name: "Jane",
+  last_name: "Moore",
+  profile_image: "jane.jpg",
+  phone_number: 1234567890,
+  bio: "Passionate about chemistry and its role in life.",
+  user: user20
+)
+
+file = URI.open("https://res.cloudinary.com/dqzwiyi26/image/upload/v1687602031/Mzi_tutor.jpg")
+student12.photo.attach(io: file, filename: "mzi.jpg", content_type: "image/jpg")
+student12.save
+
+
+
 
 # Creating tutor's skills
 puts "Creating tutor_skills..."
-tutor_skill1 = TutorSkill.create!(
-  tutor: tutor1,
-  skill: maths_skill,
-  level: rand(1..5)
-)
+# tutor_skill1 = TutorSkill.create!(
+#   tutor: tutor1,
+#   skill: maths_skill,
+#   level: rand(1..5)
+# )
 
-tutor_skill2 = TutorSkill.create!(
-  tutor: tutor1,
-  skill: english_skill,
-  level: rand(1..5)
-)
+# tutor_skill2 = TutorSkill.create!(
+#   tutor: tutor1,
+#   skill: english_skill,
+#   level: rand(1..5)
+# )
 
-# Create student skills
-puts "Creating student_skills..."
-student_skill1 = StudentSkill.create!(
-  student: student1,
-  skill: photography_skill,
-  level: rand(1..5)
-)
+# # Create student skills
+# puts "Creating student_skills..."
+# student_skill1 = StudentSkill.create!(
+#   student: student1,
+#   skill: photography_skill,
+#   level: rand(1..5)
+# )
 
-student_skill2 = StudentSkill.create!(
-  student: student2,
-  skill: illustration_skill,
-  level: rand(1..5)
-)
+# student_skill2 = StudentSkill.create!(
+#   student: student2,
+#   skill: illustration_skill,
+#   level: rand(1..5)
+# )
+
+(2..10).each do |i|
+  TutorSkill.create!(
+    tutor: eval("tutor#{i}"),
+    skill: Skill.all.sample,
+    level: rand(1..5)
+  )
+end
+
+# Assign a skill to each student
+(1..10).each do |i|
+  StudentSkill.create!(
+    student: eval("student#{i}"),
+    skill: Skill.all.sample,
+    level: rand(1..5)
+  )
+end
 
 # Creating Sessions
 puts "Creating lessons..."
 lesson1 = Lesson.create!(
-  tutor: tutor1,
+  tutor: tutor2,
   student: student1,
   date: Date.today,
   time: Time.now,
@@ -149,7 +485,7 @@ lesson1 = Lesson.create!(
 )
 
 lesson2 = Lesson.create!(
-  tutor: tutor2,
+  tutor: tutor3,
   student: student2,
   date: Date.tomorrow,
   time: Time.now + 1.hour,
