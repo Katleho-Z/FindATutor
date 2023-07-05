@@ -1,12 +1,20 @@
-<div class="lessons-container">
+<div class="row row-cols-1 row-cols-md-3 g-4">
   <% @lessons.each do |lesson| %>
-    <div class="lesson">
-      <p><strong>Skills:</strong> <%= lesson.skill.name %></p>
-      <p><strong>Date:</strong> <%= lesson.date %></p>
-      <p><strong>Time Lesson:</strong> <%= lesson.time %></p>
-      <p><strong>Amount Offered:</strong> <%= lesson.amount_offered %></p>
-      <p><strong>Tutor:</strong> <%= lesson.tutor.first_name %> <%= lesson.tutor.last_name %></p>
-      <%= link_to "Message", student_chatrooms_path(student_id: current_user.id, tutor_id: lesson.tutor_id), data: { turbo_method: :post }, class: "btn btn-primary" %>
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title"><%= lesson.skill.name %></h5>
+          <p class="card-text">
+            <strong>Date:</strong> <%= lesson.date %><br>
+            <strong>Time:</strong> <%= lesson.time %><br>
+            <strong>Amount Offered:</strong> <%= lesson.amount_offered %><br>
+            <strong>Tutor:</strong> <%= lesson.tutor.first_name %> <%= lesson.tutor.last_name %>
+          </p>
+        </div>
+        <div class="card-footer">
+          <%= link_to "Message", student_chatrooms_path(student_id: current_user.id, tutor_id: lesson.tutor_id), data: { turbo_method: :post }, class: "btn btn-primary" %>
+        </div>
+      </div>
     </div>
   <% end %>
 </div>
