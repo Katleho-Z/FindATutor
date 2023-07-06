@@ -1,18 +1,26 @@
+
 <div class="row row-cols-1 row-cols-md-3 g-4">
-  <% @lessons.each do |lesson| %>
+  <% lessons.each do |lesson| %>
     <div class="col">
       <div class="card h-100 shadow-sm">
         <div class="card-body">
-          <h5 class="card-title"><%= lesson.skill.name %></h5>
+          <h3 class="card-title"><%= lesson.skill.name %></h3>
           <p class="card-text">
-            <strong>Date:</strong> <%= lesson.date %><br>
-            <strong>Time:</strong> <%= lesson.time %><br>
-            <strong>Amount Offered:</strong> <%= lesson.amount_offered %><br>
+            <strong>Date:</strong> <%= lesson.date.strftime("%B %d, %Y") %><br>
+
+            <strong>Time:</strong> <%= lesson.time.strftime("%I:%M %p") %><br>
+            <strong>Amount Offered:</strong> <%= number_to_currency(lesson.amount_offered, unit: "R") %><br>
+
             <strong>Tutor:</strong> <%= lesson.tutor.first_name %> <%= lesson.tutor.last_name %>
           </p>
         </div>
         <div class="card-footer">
           <%= link_to "Message", student_chatrooms_path(student_id: current_user.id, tutor_id: lesson.tutor_id), data: { turbo_method: :post }, class: "btn btn-primary" %>
+
+          <% if lesson.status == 'Pending' %>
+            <%= link_to "Accept", accept_lesson_path(lesson), data: { turbo_method: :patch }, class: "btn btn-success" %>
+            <%= link_to "Reject", reject_lesson_path(lesson), data: { turbo_method: :patch }, class: "btn btn-danger" %>
+          <% end %>
         </div>
       </div>
     </div>

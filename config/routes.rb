@@ -22,8 +22,16 @@ Rails.application.routes.draw do
 
   resources :lessons, only: [:index, :show, :update, :edit, :destroy,]
 
-  resources :chatrooms, only: [:show] do
-    resources :messages, only: [:create]
+  resources :lessons do
+    member do
+      patch :accept
+      patch :reject
+    end
+  end
+
+
+  resources :chatrooms, only: [:show, :index] do
+    resources :messages, only: [:create, :index]
   end
   # Other routes can be defined here
   get 'about', to: 'static_pages#about'
