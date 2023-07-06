@@ -14,6 +14,11 @@
         </div>
         <div class="card-footer">
           <%= link_to "Message", student_chatrooms_path(student_id: current_user.id, tutor_id: lesson.tutor_id), data: { turbo_method: :post }, class: "btn btn-primary" %>
+
+          <% if lesson.status == 'Pending' %>
+            <%= link_to "Accept", accept_lesson_path(lesson), data: { turbo_method: :patch }, class: "btn btn-success" %>
+            <%= link_to "Reject", reject_lesson_path(lesson), data: { turbo_method: :patch }, class: "btn btn-danger" %>
+          <% end %>
         </div>
       </div>
     </div>

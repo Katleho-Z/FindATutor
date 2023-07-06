@@ -1,26 +1,40 @@
-<h1><strong>Chatroom</strong></h1>
+<div class="container mt-5">
+  <h1 class="text-center"><strong>Chatroom</strong></h1>
 
-<div id="chatroom">
-  <% @chatroom.messages.each do |message| %>
-    <div class="message">
-      <p class="content"><%= message.content %></p>
-      <div class="meta">
-        <p class="sender">From: <%= message.sender.class.name %> (<%= message.sender.email %>)</p>
+  <div class="row mt-5">
+    <div class="col-lg-8 offset-lg-2">
 
-        <p class="timestamp">Sent at: <%= message.created_at.strftime('%Y-%m-%d %H:%M:%S') %></p>
+      <div class="card">
+        <div class="card-body" id="chatroom">
+          <% @chatroom.messages.each do |message| %>
+            <div class="message">
+              <p class="content"><%= message.content %></p>
+              <div class="meta">
+                <p class="sender">From: <%= message.sender.class.name %> (<%= message.sender.email %>)</p>
+                <p class="timestamp text-muted"><small>Sent at: <%= message.created_at.strftime('%Y-%m-%d %H:%M:%S') %></small></p>
+              </div>
+              <hr/>
+            </div>
+          <% end %>
+        </div>
       </div>
+
+      <div class="alert alert-info mt-3">
+        <p>Please Take Note That This Chatroom Prohibit Any Use Of Offensive Language.</p>
+      </div>
+
+      <%= form_with model: [@chatroom, @message], id: "message-form", remote: true, html: { class: "mt-3" } do |form| %>
+        <div class="input-group">
+          <%= form.text_field :content, placeholder: "Type your message...", class: "form-control", aria_label: "Type your message..." %>
+          <div class="input-group-append">
+            <%= form.submit "Send", class: "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+
     </div>
-  <% end %>
+  </div>
 </div>
-
-<div class="notice">
-  <p>Please Take Note That This Chatroom Prohibit Any Use Of Offensive Language.</p>
-</div>
-
-<%= form_with model: [@chatroom, @message], id: "message-form", remote: true do |form| %>
-  <%= form.text_field :content, placeholder: "Type your message...", class: "message-input" %>
-  <%= form.submit "Send", class: "send-button" %>
-<% end %>
 
 <script>
   // Handle the incoming messages from the WebSocket connection

@@ -22,6 +22,14 @@ Rails.application.routes.draw do
 
   resources :lessons, only: [:index, :show, :update, :edit, :destroy,]
 
+  resources :lessons do
+    member do
+      patch :accept
+      patch :reject
+    end
+  end
+
+
   resources :chatrooms, only: [:show, :index] do
     resources :messages, only: [:create, :index]
   end
