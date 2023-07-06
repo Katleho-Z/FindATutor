@@ -10,8 +10,9 @@
               <%= link_to "Chatroom #{chatroom.id}", chatroom_path(chatroom) %>
             </h5>
             <!-- Display Tutor's and Student's first names -->
-            <p class="card-text">Tutor: <%= chatroom.tutor.first_name %></p>
-            <p class="card-text">Student: <%= chatroom.student.first_name %></p>
+            <p class="card-text">Tutor: <%= chatroom.tutor.first_name %> <%= chatroom.tutor.last_name %></p>
+            <p class="card-text">Student: <%= chatroom.student.first_name %> <%= chatroom.student.last_name %></p>
+
             <!-- Continue with other details as needed -->
           </div>
         </div>
