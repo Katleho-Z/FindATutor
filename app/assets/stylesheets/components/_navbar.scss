@@ -1,12 +1,10 @@
 .navbar-home {
   display: flex;
-  position: absolute;
-  align-items: center;
+  justify-content: space-between;
   width: 100%;
-  background: transparent;
-  box-shadow: none;
 
-  .navbar-wagon-link {
+
+  .navbar-lewagon-link {
     color: white;
     font-weight: bold;
   }
@@ -27,17 +25,16 @@
   margin-top: 12px;
 }
 
-.navbar-wagon {
-  justify-content: space-between;
+.navbar-lewagon {
   background: white;
   background: transparent;
 }
 
-.navbar-wagon .navbar-collapse {
+.navbar-lewagon .navbar-collapse {
   flex-grow: 0;
   justify-content: flex-end; /* Add this */
 }
-.navbar-wagon .navbar-brand img {
+.navbar-lewagon .navbar-brand img {
   width: 40px;
 }
 
