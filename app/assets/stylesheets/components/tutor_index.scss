@@ -24,3 +24,147 @@
   text-shadow: 1px 1px 1px rgb(210, 200, 200);
   color: #ffffff;
 }
+
+.location-card-container {
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 50px;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.location-card-container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.header {
+  margin-bottom: 50px;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+}
+
+.location-card {
+  flex: 1 0 calc(16.6666% - 30px);
+  margin-bottom: 30px;
+  margin: 15px;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  height: 250px;
+  transition: transform 0.3s;
+}
+
+.location-card:hover {
+  transform: scale(1.05);
+  z-index: 1;
+}
+
+.card-background {
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.location-name {
+  font-size: 2em;
+  z-index: 1;
+}
+
+.tutor-card {
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  width: 450px;
+  margin: 0 auto;
+}
+
+.tutor-card:hover {
+  transform: scale(1.03);
+}
+
+.tutor-img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  object-position: center center;
+   /* center the image vertically and horizontally */
+}
+
+.placeholder-image {
+  width: 100%;
+  height: 200px;
+  background: lightgray;
+}
+
+.tutor-info {
+  padding: 15px;
+  background: white;
+}
+
+.tutor-name {
+  margin: 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.tutor-availability {
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+
+.tutor-skills {
+  font-size: 0.8em;
+  margin-bottom: 15px;
+}
+
+.tutor-btn {
+  background: #007BFF;
+  border-color: #007BFF;
+  color: white;
+  transition: background 0.3s;
+}
+
+.tutor-btn:hover {
+  background: #0056b3;
+  border-color: #0056b3;
+  color: white;
+}
+
+.tutor-card {
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.tutor-card:hover {
+  transform: scale(1.03);
+}
+
+.tutor-skills {
+  font-size: 0.8em;
+  margin-bottom: 15px;
+}
+
+.row {
+  margin: 0 20px;
+}
