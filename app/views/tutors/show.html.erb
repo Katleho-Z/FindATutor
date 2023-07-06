@@ -1,31 +1,35 @@
 <div class="main-container-tutor-show">
-  <% if @tutor.photo.key? %>
+  <div class="tutor-profile">
+    <% if @tutor.photo.key? %>
       <%= cl_image_tag @tutor.photo.key, class: "profile-picture img-fluid rounded-circle" %>
     <% else %>
       <%= image_tag("tutors/avatar.jpeg", class: "profile-picture img-fluid rounded-circle", fallback: "default_profile_picture.jpg") %>
     <% end %>
-  <div class="tutor-show-info">
-    <h2><%= "#{@tutor.first_name} #{@tutor.last_name}" %></h2>
-    <p>
+
+    <h2 class="tutor-name"><%= "#{@tutor.first_name} #{@tutor.last_name}" %></h2>
+    <p class="tutor-location"><%= "Location: #{@tutor.location}" %></p>
+    <p class="tutor-email"><%= "Email Address: #{@tutor.email_address}" %></p>
+    <div class="tutor-skills">
       <% @tutor.skills.each do |skill| %>
-        <%= skill.name %>
+        <span class="skill"><%= skill.name %></span>
       <% end %>
-    </p>
-    <p><%= "Location: #{@tutor.location}" %></p>
-    <p><%= "Email Address: #{@tutor.email_address}" %></p>
-    <div class="tutor-show-reviews">
-      <p>Reviews</p>
-      <p>4.5</p>
-      <h3>Bio</h3>
-      <p><%= @tutor.bio %></p>
-
     </div>
-
-    <%= link_to "Request Lesson", new_tutor_lesson_path(@tutor), class: "btn btn-primary" %>
-
-    <%= link_to "Message", student_chatrooms_path(student_id: current_user.id, tutor_id: @tutor.id), data: {turbo_method: :post}, class: "btn btn-primary" %>
-
-
   </div>
 
+  <div class="tutor-details">
+    <div class="tutor-show-reviews">
+      <h3>Reviews</h3>
+      <p>4.5</p>
+    </div>
+
+    <div class="tutor-bio">
+      <h3>Bio</h3>
+      <p><%= @tutor.bio %></p>
+    </div>
+
+    <div class="tutor-actions">
+      <%= link_to "Request Lesson", new_tutor_lesson_path(@tutor), class: "btn btn-primary" %>
+      <%= link_to "Message", student_chatrooms_path(student_id: current_user.id, tutor_id: @tutor.id), data: {turbo_method: :post}, class: "btn btn-primary" %>
+    </div>
+  </div>
 </div>

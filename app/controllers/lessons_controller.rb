@@ -32,6 +32,7 @@ class LessonsController < ApplicationController
 
   def create
     @lesson = Lesson.new(lesson_params)
+    @lesson.status = 'Pending'  # Manually set the status here
     @tutor = Tutor.find(params[:tutor_id])
     @lesson.tutor = @tutor
     @lesson.student = current_user.student
