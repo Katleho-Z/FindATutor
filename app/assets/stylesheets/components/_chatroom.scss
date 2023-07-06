@@ -28,3 +28,22 @@
     }
   }
 }
+
+.card {
+  border-radius: 15px; /* round the edges */
+}
+
+.card-body-chatroom {
+  padding: 1.5rem;
+}
+
+.card-title-chatroom {
+  font-size: 1.25rem; /* make the title bigger */
+  color: #343a40; /* darker text */
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #6c757d; /* lighter text for less important information */
+}
+
