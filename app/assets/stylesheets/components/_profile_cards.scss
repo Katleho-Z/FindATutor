@@ -64,3 +64,20 @@
 .h3 {
   font-size: 12px;
 }
+
+.student-profile {
+  padding: 100px;
+  border: 5px solid #ffb516;
+  background-color: black;
+  width: 100%;
+
+  h2, h3, p {
+  color: #ffffff;
+  }
+}
+
+.student-show {
+  width: 65%;
+  margin: 60px auto;
+  height: 500px;
+}
