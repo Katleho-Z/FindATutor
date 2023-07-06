@@ -1,10 +1,14 @@
-<div class="lesson-container">
-  <h1>Lesson</h1>
-  <p><strong>Skills:</strong> <%= @lesson.skill.name %></p>
-  <p><strong>Date:</strong> <%= @lesson.date %></p>
-  <p><strong>Time Lesson:</strong> <%= @lesson.time %></p>
-  <p><strong>Amount Offered:</strong> <%= @lesson.amount_offered %></p>
-  <p><strong>Tutor:</strong> <%= @lesson.tutor.first_name %> <%= @lesson.tutor.last_name %></p>
+<div class="lesson-container d-flex flex-column align-items-center">
+  <h1>Your lesson is pending</h1>
+  <div class="card shadow mt-3" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Lesson</h5>
+      <p class="card-text"><strong>Skills:</strong> <%= @lesson.skill.name %></p>
+      <p class="card-text"><strong>Date:</strong> <%= @lesson.date %></p>
+      <p class="card-text"><strong>Time Lesson:</strong> <%= @lesson.time %></p>
+      <p class="card-text"><strong>Amount Offered:</strong> <%= @lesson.amount_offered %></p>
+      <p class="card-text"><strong>Tutor:</strong> <%= @lesson.tutor.first_name %> <%= @lesson.tutor.last_name %></p>
+    </div>
+  </div>
+  <%= link_to 'Back', lessons_path, class: 'back-link mt-3' %>
 </div>
-
-<%= link_to 'Back', lessons_path, class: 'back-link' %>

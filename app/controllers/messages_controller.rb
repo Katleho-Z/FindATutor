@@ -13,6 +13,12 @@ class MessagesController < ApplicationController
     end
   end
 
+  def index
+    @chatroom = Chatroom.find(params[:chatroom_id])
+    @messages = @chatroom.messages.order(created_at: :asc)
+    @message = Message.new
+  end
+
   private
 
   def message_params
