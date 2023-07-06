@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
+  <div class="navbar-home">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag("logo2.png", alt: "Logo Image", height: '50px') %>
+      <%= image_tag("logo2.png", alt: "Logo Image") %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,25 +10,33 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
-                <% if user_signed_in? %>
-      
-        <li class="nav-item">
-          <%= link_to "Lessons", lessons_path, class: "btn btn-secondary" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Chatrooms", chatrooms_path, class: "btn btn-secondary" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Blog", blogs_path, class: "btn btn-secondary" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'About Us', about_path, class: "btn btn-secondary" %>
-        </li>
-
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Lessons", lessons_path, class: "btn btn-secondary" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Chatrooms", chatrooms_path, class: "btn btn-secondary" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Blog", blogs_path, class: "btn btn-secondary" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'About Us', about_path, class: "btn btn-secondary" %>
+          </li>
 
           <li class="nav-item dropdown">
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= image_tag "https://mir-s3-cdn-cf.behance.net/user/276/8a4956142799115.5e5360d08a367.jpg", class: "avatar", alt: "dropdown menu" %>
+            <% if current_user.tutor.nil? && !current_user.student.nil?%>
+              <% if current_user.student.photo.attached?%>
+                <%= cl_image_tag current_user.student.photo.key, class: "avatar" %>
+              <% end %>
+            <% elsif !current_user.tutor.nil? %>
+              <% if current_user.tutor.photo.attached?%>
+                <%= cl_image_tag current_user.tutor.photo.key, class: "avatar" %>
+              <% end %>
+            <% else %>
+              <%= image_tag("logo2.png", alt: "Logo Image", height: '50px') %>
+            <% end %>
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <% if current_user.tutor %>
