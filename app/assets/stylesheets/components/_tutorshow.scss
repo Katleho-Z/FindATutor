@@ -1,0 +1,65 @@
+.main-container-tutor-show {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.tutor-profile {
+  width: 30%;
+  text-align: center;
+}
+
+.tutor-profile .profile-picture {
+  width: 150px;
+  height: 150px;
+}
+
+.tutor-profile .tutor-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.tutor-profile .tutor-location,
+.tutor-profile .tutor-email {
+  font-size: 18px;
+  color: #555;
+  margin-top: 5px;
+}
+
+.tutor-profile .tutor-skills {
+  margin-top: 15px;
+}
+
+.tutor-bio p {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.tutor-profile .tutor-skills .skill {
+  display: inline-block;
+  background-color: #ddd;
+  padding: 5px;
+  margin-right: 5px;
+  border-radius: 3px;
+}
+
+.tutor-details {
+  width: 60%;
+}
+
+.tutor-details .tutor-show-reviews,
+.tutor-details .tutor-bio {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.tutor-actions {
+  margin-top: 20px;
+}
+
+.btn {
+  margin-right: 10px;
+}
