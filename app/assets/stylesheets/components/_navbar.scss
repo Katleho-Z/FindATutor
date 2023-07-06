@@ -22,8 +22,8 @@
 
 .navbar-wagon .navbar-collapse {
   flex-grow: 0;
+  justify-content: flex-end; /* Add this */
 }
-
 .navbar-wagon .navbar-brand img {
   width: 40px;
 }

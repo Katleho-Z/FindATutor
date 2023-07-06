@@ -21,26 +21,32 @@ User.destroy_all
 
 # Create Users
 puts "Creating users..."
+
+
+
+# These users are tutors:
 user1 = User.create!(email: "eti@example.com", password: "password1")
-user2 = User.create!(email: "mzi@example.com", password: "password2")
-user3 = User.create!(email: "kat@example.com", password: "password3")
-user4 = User.create!(email: "alex@example.com", password: "password4")
-user5 = User.create!(email: "ben@example.com", password: "password5")
-user6 = User.create!(email: "sue@example.com", password: "password6")
-user7 = User.create!(email: "lisa@example.com", password: "password7")
-user8 = User.create!(email: "bob@example.com", password: "password8")
-user9 = User.create!(email: "ann@example.com", password: "password9")
-user10 = User.create!(email: "ken@example.com", password: "password10")
-user11 = User.create!(email: "ivy@example.com", password: "password11")
-user12 = User.create!(email: "ada@example.com", password: "password12")
-user13 = User.create!(email: "tom@example.com", password: "password13")
-user14 = User.create!(email: "joy@example.com", password: "password14")
-user15 = User.create!(email: "matt@example.com", password: "password15")
-user16 = User.create!(email: "lucy@example.com", password: "password16")
-user17 = User.create!(email: "paul@example.com", password: "password17")
-user18 = User.create!(email: "emma@example.com", password: "password18")
-user19 = User.create!(email: "mark@example.com", password: "password19")
-user20 = User.create!(email: "jane@example.com", password: "password20")
+user2 = User.create!(email: "mzi@example.com", password: "password1")
+user3 = User.create!(email: "kat@example.com", password: "password1")
+user4 = User.create!(email: "alex@example.com", password: "password1")
+user5 = User.create!(email: "ben@example.com", password: "password1")
+user6 = User.create!(email: "sue@example.com", password: "password1")
+user7 = User.create!(email: "lisa@example.com", password: "password1")
+user8 = User.create!(email: "bob@example.com", password: "password1")
+user9 = User.create!(email: "ann@example.com", password: "password1")
+user10 = User.create!(email: "ken@example.com", password: "password1")
+
+# These users are students:
+user11 = User.create!(email: "ivy@example.com", password: "password1")
+user12 = User.create!(email: "ada@example.com", password: "password1")
+user13 = User.create!(email: "tom@example.com", password: "password1")
+user14 = User.create!(email: "joy@example.com", password: "password1")
+user15 = User.create!(email: "matt@example.com", password: "password1")
+user16 = User.create!(email: "lucy@example.com", password: "password1")
+user17 = User.create!(email: "paul@example.com", password: "password1")
+user18 = User.create!(email: "emma@example.com", password: "password1")
+user19 = User.create!(email: "mark@example.com", password: "password1")
+user20 = User.create!(email: "jane@example.com", password: "password1")
 
 # ...
 
