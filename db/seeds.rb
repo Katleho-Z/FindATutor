@@ -50,45 +50,20 @@ user20 = User.create!(email: "jane@example.com", password: "password1")
 
 # ...
 
-# Create skills
 puts "Creating skills..."
-maths_skill = Skill.create!(
-  name: "Mathematics"
-)
-puts "math"
 
-english_skill = Skill.create!(
-  name: "English"
-)
-puts "Eng"
-
-photography_skill = Skill.create!(
-  name: "Photography"
-)
-puts "photo"
-
-painting_skill = Skill.create!(
-  name: "Painting"
-)
-puts "paint"
-illustration_skill = Skill.create!(
-  name: "Illustration"
-)
-puts "illus"
-
-biology_skill = Skill.create!(
-  name: "Biology"
-)
-puts "bio"
-
-puts "Creating skills..."
-chemistry_skill = Skill.create!(name: "Chemistry")
-physics_skill = Skill.create!(name: "Physics")
-computer_science_skill = Skill.create!(name: "Computer Science")
-art_skill = Skill.create!(name: "Art")
-history_skill = Skill.create!(name: "History")
-geography_skill = Skill.create!(name: "Geography")
-music_skill = Skill.create!(name: "Music")
+html_skill = Skill.create!(name: "HTML")
+css_skill = Skill.create!(name: "CSS")
+javascript_skill = Skill.create!(name: "JavaScript")
+php_skill = Skill.create!(name: "PHP")
+react_skill = Skill.create!(name: "React")
+angular_skill = Skill.create!(name: "Angular")
+nodejs_skill = Skill.create!(name: "Node.js")
+express_skill = Skill.create!(name: "Express")
+mongodb_skill = Skill.create!(name: "MongoDB")
+mysql_skill = Skill.create!(name: "MySQL")
+git_skill = Skill.create!(name: "Git")
+heroku_skill = Skill.create!(name: "Heroku")
 
 
 
@@ -489,7 +464,7 @@ lesson1 = Lesson.create!(
   time: Time.now,
   amount_offered: 50.0,
   status: "Pending",
-  skill: english_skill
+  skill: html_skill
 )
 
 lesson2 = Lesson.create!(
@@ -499,7 +474,7 @@ lesson2 = Lesson.create!(
   time: Time.now + 1.hour,
   amount_offered: 75.0,
   status: "Confirmed",
-  skill: painting_skill
+  skill: css_skill
 )
 
 10.times do |i|
