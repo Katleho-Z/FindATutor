@@ -4,11 +4,13 @@
     <div class="col">
       <div class="card h-100 shadow-sm">
         <div class="card-body">
-          <h5 class="card-title"><%= lesson.skill.name %></h5>
+          <h3 class="card-title"><%= lesson.skill.name %></h3>
           <p class="card-text">
-            <strong>Date:</strong> <%= lesson.date %><br>
-            <strong>Time:</strong> <%= lesson.time %><br>
-            <strong>Amount Offered:</strong> <%= lesson.amount_offered %><br>
+            <strong>Date:</strong> <%= lesson.date.strftime("%B %d, %Y") %><br>
+
+            <strong>Time:</strong> <%= lesson.time.strftime("%I:%M %p") %><br>
+            <strong>Amount Offered:</strong> <%= number_to_currency(lesson.amount_offered, unit: "R") %><br>
+
             <strong>Tutor:</strong> <%= lesson.tutor.first_name %> <%= lesson.tutor.last_name %>
           </p>
         </div>
