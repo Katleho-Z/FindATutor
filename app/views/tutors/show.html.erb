@@ -1,5 +1,9 @@
 <div class="main-container-tutor-show">
-  <%= cl_image_tag @tutor.photo.key, :gravity=>"face", :height=>300, :width=>300, :crop=>"fill", class:"tutor-show-avatar" %>
+  <% if @tutor.photo.key? %>
+      <%= cl_image_tag @tutor.photo.key, class: "profile-picture img-fluid rounded-circle" %>
+    <% else %>
+      <%= image_tag("tutors/avatar.jpeg", class: "profile-picture img-fluid rounded-circle", fallback: "default_profile_picture.jpg") %>
+    <% end %>
   <div class="tutor-show-info">
     <h2><%= "#{@tutor.first_name} #{@tutor.last_name}" %></h2>
     <p>
@@ -20,7 +24,7 @@
     <%= link_to "Request Lesson", new_tutor_lesson_path(@tutor), class: "btn btn-primary" %>
 
     <%= link_to "Message", student_chatrooms_path(student_id: current_user.id, tutor_id: @tutor.id), data: {turbo_method: :post}, class: "btn btn-primary" %>
-    
+
 
   </div>
 

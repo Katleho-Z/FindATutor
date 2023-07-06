@@ -2,9 +2,9 @@
   <div class="student-profile">
     <% if @student.photo.key? %>
       <%= cl_image_tag @student.photo.key, class: "profile-picture img-fluid rounded-circle" %>
-      <% else %>
-        <%= image_tag "eti.jpg", class: "profile-picture img-fluid rounded-circle" %>
-      <% end %>
+    <% else %>
+      <%= image_tag("tutors/avatar.jpeg", class: "profile-picture img-fluid rounded-circle", fallback: "default_profile_picture.jpg") %>
+    <% end %>
     <h2><%= @student.first_name %> <%= @student.last_name %></h2>
     <div class="student-details">
       <p><strong>Contact:</strong> <%= @student.phone_number %></p>
