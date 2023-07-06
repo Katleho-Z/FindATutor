@@ -14,6 +14,19 @@
 
 }
 
+.nav-item .btn {
+  margin-right: 15px; /* adjust the right margin to create space between buttons */
+  margin-top: 14px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 8px;
+  margin-top: 12px;
+}
+
 .navbar-wagon {
   justify-content: space-between;
   background: white;
@@ -22,8 +35,8 @@
 
 .navbar-wagon .navbar-collapse {
   flex-grow: 0;
+  justify-content: flex-end; /* Add this */
 }
-
 .navbar-wagon .navbar-brand img {
   width: 40px;
 }

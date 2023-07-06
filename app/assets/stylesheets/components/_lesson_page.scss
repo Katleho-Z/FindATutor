@@ -1,8 +1,10 @@
 .lesson-container {
-    background-color: #f9f9f9;
     border: 1px solid #ddd;
     padding: 20px;
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
   }
 
   .lesson-container h1 {
@@ -23,24 +25,43 @@
     margin-top: 20px;
   }
 
-
-
-
-
-
-
-
-  .lessons-container {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-
+  .card-body-lessons {
+    padding: 0;
+    background-image: url('https://images.unsplash.com/photo-1587463646075-888e8afef90e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 4px;
+    border-radius: 5px;
+    height: 330px;
   }
 
-  .lesson {
-    margin-bottom: 20px;
-    background-color: #ebe1e1;
+  .card-body-lessons h3 {
+    margin-bottom: 0;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 24px;
+    color: #a6ff00;
+    text-shadow: 1px 1px 2px rgba(174, 255, 0, 0.5);
+    font-family: 'Arial', sans-serif;
+}
+
+  .card-body-lessons p {
+      margin-top: 130px;
+      margin-left: 54px;
+      color: #000000;
+      font-size: 14px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+      font-family: 'Georgia', serif;
   }
+
+
+
+
+    .lesson {
+      margin-bottom: 20px;
+      background-color: #ebe1e1;
+    }
 
   .lesson p {
     margin: 5px 0;

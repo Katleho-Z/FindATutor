@@ -9,6 +9,19 @@ class LessonsController < ApplicationController
     @rejected_lessons = Lesson.where(status: 'Rejected')
   end
 
+  def accept
+    @lesson = Lesson.find(params[:id])
+    @lesson.update(status: 'Accepted')
+    redirect_to lessons_path
+  end
+
+  def reject
+    @lesson = Lesson.find(params[:id])
+    @lesson.update(status: 'Rejected')
+    redirect_to lessons_path
+  end
+
+
   def show
   end
 
