@@ -1,0 +1,27 @@
+<div class="container">
+  <h1 class="text-center">Chatrooms</h1>
+
+  <div class="row justify-content-center">
+    <% @chatrooms.each do |chatroom| %>
+      <div class="col-md-4">
+        <div class="card mt-4">
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= link_to "Chatroom #{chatroom.id}", chatroom_path(chatroom) %>
+            </h5>
+            <!-- Display Tutor's and Student's first names -->
+            <p class="card-text">Tutor: <%= chatroom.tutor.first_name %></p>
+            <p class="card-text">Student: <%= chatroom.student.first_name %></p>
+            <!-- Continue with other details as needed -->
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-4 text-center">
+      <%= link_to 'Back', root_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>

@@ -12,6 +12,8 @@ puts "Cleaning database..."
 Lesson.destroy_all
 TutorSkill.destroy_all
 StudentSkill.destroy_all
+Chatroom.destroy_all
+Message.destroy_all
 Tutor.destroy_all
 Student.destroy_all
 Skill.destroy_all
