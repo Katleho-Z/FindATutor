@@ -24,4 +24,8 @@ class ChatroomsController < ApplicationController
     # render :new
     # redirect_to chatroom_path(@chatroom)
   end
+
+  def index
+    @chatrooms = Chatroom.all
+  end
 end

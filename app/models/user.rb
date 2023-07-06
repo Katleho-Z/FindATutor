@@ -7,6 +7,14 @@ class User < ApplicationRecord
   has_one :student
   has_one :tutor
 
+  # def is_student?
+  #   student.present?
+  # end
+
+  # def is_tutor?
+  #   tutor.present?
+  # end
+
   validates :email, presence: true, uniqueness: true
   validates :encrypted_password, presence: true
 end

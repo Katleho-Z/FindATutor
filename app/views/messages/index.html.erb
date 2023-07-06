@@ -1,0 +1,20 @@
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <% @chatrooms.each do |chatroom| %>
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Chatroom with <%= chatroom.partner(current_user).name %> </h5> <!-- assuming partner is a method in your Chatroom model that takes a user and returns the other user in the chat -->
+          <% chatroom.messages.each do |message| %>
+            <p class="card-text">
+              <strong>Sender:</strong> <%= message.sender.name %><br>
+              <strong>Content:</strong> <%= message.content %><br>
+            </p>
+          <% end %>
+        </div>
+        <div class="card-footer">
+          <%= link_to "Go to Chat", chatroom_path(chatroom), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
