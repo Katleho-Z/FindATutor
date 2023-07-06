@@ -1,14 +1,14 @@
-<div class="lesson-container d-flex flex-column align-items-center">
-  <h1>Your lesson is pending</h1>
-  <div class="card shadow mt-3" style="width: 18rem;">
+<div class="lesson-container lesson-details d-flex flex-column align-items-center">
+  <h1 class="lesson-title">Your lesson is pending</h1>
+  <div class="lesson-card card shadow mt-3">
     <div class="card-body">
       <h5 class="card-title">Lesson</h5>
       <p class="card-text"><strong>Skills:</strong> <%= @lesson.skill.name %></p>
-      <p class="card-text"><strong>Date:</strong> <%= @lesson.date %></p>
-      <p class="card-text"><strong>Time Lesson:</strong> <%= @lesson.time %></p>
-      <p class="card-text"><strong>Amount Offered:</strong> <%= @lesson.amount_offered %></p>
+      <p class="card-text"><strong>Date:</strong> <%= @lesson.date.strftime("%B %d, %Y") %></p>
+      <p class="card-text"><strong>Time Lesson:</strong> <%= @lesson.time.strftime("%I:%M %p") %></p>
+      <p class="card-text"><strong>Amount Offered:</strong> <%= number_to_currency(@lesson.amount_offered, unit: "R") %></p>
       <p class="card-text"><strong>Tutor:</strong> <%= @lesson.tutor.first_name %> <%= @lesson.tutor.last_name %></p>
     </div>
   </div>
-  <%= link_to 'Back', lessons_path, class: 'back-link mt-3' %>
+  <%= link_to 'Back', lessons_path, class: 'back-link btn btn-secondary mt-3' %>
 </div>

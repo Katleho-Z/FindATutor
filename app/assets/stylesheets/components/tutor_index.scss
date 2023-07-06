@@ -168,3 +168,26 @@
 .row {
   margin: 0 20px;
 }
+
+
+.tutor-availability, .tutor-skills {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  margin-top: 15px;
+  color: #333;
+  font-weight: 600;
+}
+
+.tutor-availability:before {
+  content: '\1F4C5'; /* Unicode for Calendar Emoji */
+  font-size: 1.3em;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.tutor-skills:before {
+  content: '\1F3EB'; /* Unicode for School Emoji */
+  font-size: 1.3em;
+  margin-right: 10px;
+  vertical-align: middle;
+}

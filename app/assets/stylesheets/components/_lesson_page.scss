@@ -14,6 +14,7 @@
 
   .lesson-container p {
     margin: 5px 0;
+    color: #000;
   }
 
   .lesson-container strong {
@@ -70,3 +71,31 @@
   h1 {
     text-align: center;
   }
+
+  .lesson-details {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.lesson-title {
+    color: #6c757d;
+    text-transform: uppercase;
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.lesson-card {
+    border-color: #6c757d;
+}
+
+.lesson-card .card-body {
+    color: #333;
+}
+
+.back-link {
+    color: #fff;
+}
