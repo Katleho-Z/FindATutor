@@ -25,7 +25,7 @@
     margin-top: 20px;
   }
 
-  .card-body {
+  .card-body-lessons {
     padding: 0;
     background-image: url('https://images.unsplash.com/photo-1587463646075-888e8afef90e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80');
     background-size: cover;
@@ -36,7 +36,7 @@
     height: 330px;
   }
 
-  .card-body h3 {
+  .card-body-lessons h3 {
     margin-bottom: 0;
     margin-top: 10px;
     text-align: center;
@@ -46,7 +46,7 @@
     font-family: 'Arial', sans-serif;
 }
 
-  .card-body p {
+  .card-body-lessons p {
       margin-top: 130px;
       margin-left: 54px;
       color: #000000;
