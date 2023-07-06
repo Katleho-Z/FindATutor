@@ -1,5 +1,5 @@
 <div class="container mt-5">
-  <h1 class="text-center"><strong>Chatroom</strong></h1>
+  <h1 class="text-center"><strong>LessonLounge</strong></h1>
 
   <div class="row mt-5">
     <div class="col-lg-8 offset-lg-2">
@@ -11,7 +11,7 @@
               <p class="content"><%= message.content %></p>
               <div class="meta">
                 <p class="sender">From: <%= message.sender.class.name %> (<%= message.sender.email %>)</p>
-                <p class="timestamp text-muted"><small>Sent at: <%= message.created_at.strftime('%Y-%m-%d %H:%M:%S') %></small></p>
+                <p class="timestamp"><small>Sent at: <%= message.created_at.strftime('%Y-%m-%d %H:%M:%S') %></small></p>
               </div>
               <hr/>
             </div>

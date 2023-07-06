@@ -6,53 +6,52 @@
     </div>
 </div>
 
-<div class="location-cards">
+<div class="location-card-container">
+  <div class="header text-center py-4">
+    <h2 class="display-4">Find Tutor by Location</h2>
+  </div>
 
-<div class="text-center py-4">
-  <h2 class="display-4">Find Tutor by Location</h2>
-</div>
-
-  <div class="cards">
-    <%= link_to tutors_path(location: "Johannesburg") do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://img.sixt.com/1600/Cape_Town_%7C_in_TYPO_cape-town-city-content.jpg)">
-        Johannesburg
+  <div class="card-grid">
+    <%= link_to tutors_path(location: "Johannesburg"), class: "location-card" do %>
+      <div class="card-background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://img.sixt.com/1600/Cape_Town_%7C_in_TYPO_cape-town-city-content.jpg')">
+        <div class="location-name">Johannesburg</div>
       </div>
     <% end %>
 
-    <%= link_to tutors_path(location: "Durban") do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.sa-venues.com/attractionskzn/gallery/greaterdurban/1b.jpg)">
-        Durban
+    <%= link_to tutors_path(location: "Durban"), class: "location-card" do %>
+      <div class="card-background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://www.sa-venues.com/attractionskzn/gallery/greaterdurban/1b.jpg')">
+        <div class="location-name">Durban</div>
       </div>
     <% end %>
 
-    <%= link_to tutors_path(location: "Cape Town") do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Aerial_View_of_Sea_Point%2C_Cape_Town_South_Africa.jpg/1200px-Aerial_View_of_Sea_Point%2C_Cape_Town_South_Africa.jpg)">
-        Cape Town
+    <%= link_to tutors_path(location: "Cape Town"), class: "location-card" do %>
+      <div class="card-background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Aerial_View_of_Sea_Point%2C_Cape_Town_South_Africa.jpg/1200px-Aerial_View_of_Sea_Point%2C_Cape_Town_South_Africa.jpg')">
+        <div class="location-name">Cape Town</div>
       </div>
     <% end %>
 
-    <%= link_to tutors_path(location: "Port Elizabeth") do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://lp-cms-production.imgix.net/2019-06/478157521_full.jpg)">
-        Port Elizabeth
+    <%= link_to tutors_path(location: "Port Elizabeth"), class: "location-card" do %>
+      <div class="card-background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://lp-cms-production.imgix.net/2019-06/478157521_full.jpg')">
+        <div class="location-name">Port Elizabeth</div>
       </div>
     <% end %>
 
-    <%= link_to tutors_path(location: "Pretoria") do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://interestingfacts.co.za/wp-content/uploads/2022/09/Polokwane.jpg)">
-        Polokwane
+    <%= link_to tutors_path(location: "Polokwane"), class: "location-card" do %>
+      <div class="card-background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://interestingfacts.co.za/wp-content/uploads/2022/09/Polokwane.jpg')">
+        <div class="location-name">Polokwane</div>
       </div>
     <% end %>
 
-    <%= link_to tutors_path(location: "Bloemfontein") do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://upload.wikimedia.org/wikipedia/commons/f/f4/Stellenbosch_University.jpg)">
-        Stellenbosch
+    <%= link_to tutors_path(location: "Stellenbosch"), class: "location-card" do %>
+      <div class="card-background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://upload.wikimedia.org/wikipedia/commons/f/f4/Stellenbosch_University.jpg')">
+        <div class="location-name">Stellenbosch</div>
       </div>
     <% end %>
   </div>
 </div>
 
 
-<div class="container">
+
   <div class="text-center py-4">
     <h2 class="display-4">Browse all tutors</h2>
   </div>
@@ -75,23 +74,25 @@
     <div class="row">
       <% @tutors.each do |tutor| %>
         <div class="col-md-3">
-          <div class="card mb-4">
+          <div class="tutor-card mb-4">
             <% if tutor.photo.attached? %>
-              <%= image_tag tutor.photo, class: "card-img-top", alt: tutor.first_name %>
+              <%= image_tag tutor.photo, class: "tutor-img", alt: tutor.first_name %>
             <% else %>
               <div class="placeholder-image"></div>
             <% end %>
-            <div class="card-body">
-              <h5 class="card-title">
+            <div class="tutor-info">
+              <h5 class="tutor-name">
                 <strong><%= tutor.first_name %> <%= tutor.last_name %></strong> - <%= tutor.location %>
               </h5>
-              <p class="card-text">Available: <%= tutor.availability %></p>
-              <%= link_to "Show More", tutor_path(tutor), class: "btn btn-primary" %>
+              <p class="tutor-availability">Available: <%= tutor.availability %></p>
+              <p class="tutor-skills">Skills: <%= tutor.skills.map(&:name).join(", ") %></p>
+              <%= link_to "Show More", tutor_path(tutor), class: "btn btn-primary tutor-btn" %>
             </div>
           </div>
         </div>
       <% end %>
     </div>
+
 
 
     <div class="container-skill">
@@ -105,4 +106,3 @@
     </div>
 
     <div class="spacer"></div>
-</div>
