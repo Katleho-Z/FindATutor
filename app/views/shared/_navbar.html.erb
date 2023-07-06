@@ -9,7 +9,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto">
+      <ul class="navbar-nav ms-auto justify-content-end"> <!-- Updated class: added justify-content-end -->
         <% if user_signed_in? %>
           <li class="nav-item">
             <%= link_to "Home", root_path, class: "nav-link" %>
@@ -17,7 +17,7 @@
           <li class="nav-item">
             <%= link_to "Lessons", lessons_path, class: "nav-link" %>
           </li>
-            <li class="nav-item">
+          <li class="nav-item">
             <%= link_to "Chatrooms", chatrooms_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
@@ -31,16 +31,16 @@
               <%= image_tag "https://mir-s3-cdn-cf.behance.net/user/276/8a4956142799115.5e5360d08a367.jpg", class: "avatar", alt: "dropdown menu" %>
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <% if current_user.tutor %>
-              <%= link_to "Tutor Profile", tutor_path(current_user.tutor), class: "dropdown-item" %>
-            <% else %>
+              <% if current_user.tutor %>
+                <%= link_to "Tutor Profile", tutor_path(current_user.tutor), class: "dropdown-item" %>
+              <% else %>
 
-            <% end %>
-            <% if current_user.student %>
-              <%= link_to "Student Profile", student_path(current_user.student), class: "dropdown-item" %>
-            <% else %>
+              <% end %>
+              <% if current_user.student %>
+                <%= link_to "Student Profile", student_path(current_user.student), class: "dropdown-item" %>
+              <% else %>
 
-            <% end %>
+              <% end %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
