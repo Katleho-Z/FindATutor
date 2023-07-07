@@ -56,7 +56,7 @@
 }
 
 .location-card {
-  flex: 1 0 calc(16.6666% - 30px);
+  flex: 1 0 calc(20% - 30px);;
   margin-bottom: 30px;
   margin: 15px;
   color: white;
@@ -66,6 +66,7 @@
   position: relative;
   height: 250px;
   transition: transform 0.3s;
+
 }
 
 .location-card:hover {

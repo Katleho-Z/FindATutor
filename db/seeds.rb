@@ -76,7 +76,7 @@ tutor2 = Tutor.create!(
   availability: "Monday, Wednesday, Friday",
   location: "Cape Town",
   email_address: "sarah@example.com",
-  bio: "Experienced tutor with a passion for Photography.",
+  bio: "Dedicated web development tutor specializing in HTML, CSS, and JavaScript. With years of hands-on experience in React and Angular, I am committed to helping students build a robust foundation in coding. My approach combines theoretical knowledge with practical skills for real-world applications.",
   user: user1
 )
 
@@ -438,7 +438,7 @@ puts "Creating tutor_skills..."
 #   level: rand(1..5)
 # )
 
-(2..10).each do |i|
+(2...10).each do |i|
   TutorSkill.create!(
     tutor: eval("tutor#{i}"),
     skill: Skill.all.sample,
@@ -483,7 +483,7 @@ lesson2 = Lesson.create!(
     student: Student.all.sample,
     date: Faker::Date.between(from: 2.days.ago, to: Date.today),
     time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
-    amount_offered: Faker::Number.decimal(l_digits: 2),
+    amount_offered: Faker::Number.between(from: 120, to: 300),
     status: ["Pending", "Confirmed", "Rejected"].sample,
     skill: Skill.all.sample
   )

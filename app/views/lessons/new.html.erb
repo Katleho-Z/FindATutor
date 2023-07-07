@@ -1,11 +1,9 @@
 <div class="form-container">
   <%= simple_form_for [@tutor, @lesson] do |f| %>
     <div>
-      <%= f.label :date, "Date:" %>
       <%= f.input :date, as: :date, required: true %>
     </div>
     <div>
-      <%= f.label :time, "Time:" %>
       <%= f.input :time, as: :time, required: true %>
     </div>
     <div>
