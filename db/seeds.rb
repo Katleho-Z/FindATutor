@@ -76,7 +76,9 @@ tutor2 = Tutor.create!(
   availability: "Monday, Wednesday, Friday",
   location: "Cape Town",
   email_address: "sarah@example.com",
-  bio: "Dedicated web development tutor specializing in HTML, CSS, and JavaScript. With years of hands-on experience in React and Angular, I am committed to helping students build a robust foundation in coding. My approach combines theoretical knowledge with practical skills for real-world applications.",
+  bio: "Dedicated web development tutor specializing in HTML, CSS, and JavaScript. With over a decade of professional and personal experience in the field, I am proficient in key web technologies including React, Angular, Node.js, Express, MongoDB, MySQL, Git, and Heroku. I believe that my deep understanding of these programming languages and tools can significantly benefit my students and empower them to build and maintain full-stack web applications.
+
+  Beyond my technical abilities, I am passionate about teaching and empowering others with the skills and knowledge to excel in the ever-evolving world of web development.",
   user: user1
 )
 

@@ -1,13 +1,13 @@
 <div class="container">
 <br>
-  <h1 class="chatroom-title">Chatrooms</h1>
+  <h1 class="chatroom-title">LessonLounges</h1>
   <div class="chatroom-grid">
     <% @chatrooms.each do |chatroom| %>
       <div class="chatroom-card-container">
         <div class="chatroom-card">
           <div class="chatroom-card-body">
             <h5 class="chatroom-card-title">
-              <%= link_to "Chatroom #{chatroom.id}", chatroom_path(chatroom) %>
+              <%= link_to "LessonLounge #{chatroom.id}", chatroom_path(chatroom) %>
             </h5>
             <p class="chatroom-card-text">Tutor: <%= chatroom.tutor.first_name %> <%= chatroom.tutor.last_name %></p>
             <p class="chatroom-card-text">Student: <%= chatroom.student.first_name %> <%= chatroom.student.last_name %></p>

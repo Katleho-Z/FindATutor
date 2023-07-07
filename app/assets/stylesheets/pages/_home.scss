@@ -3,3 +3,16 @@ body {
   padding: 0;
   background-color: rgb(220, 242, 220);
 }
+
+
+.main-banner-content h1 {
+  font-size: 4em; /* You can adjust this value to make the heading larger or smaller */
+  font-weight: bold; /* This makes the heading text bold */
+  color: #ffffff; /* This changes the text color to a dark blue */
+  text-shadow: 2px 2px 4px #ffffff; /* This adds a subtle shadow to the text */
+}
+
+.main-banner-content p {
+  color: #ffffff;
+  font-size: 1.7em;
+}
