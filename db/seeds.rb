@@ -440,7 +440,7 @@ puts "Creating tutor_skills..."
 #   level: rand(1..5)
 # )
 
-(2...10).each do |i|
+(2..10).each do |i|
   TutorSkill.create!(
     tutor: eval("tutor#{i}"),
     skill: Skill.all.sample,
